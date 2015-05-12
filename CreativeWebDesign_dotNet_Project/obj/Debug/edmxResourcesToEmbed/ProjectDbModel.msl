@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CreativeWebDesigndotNetProject_dbModelStoreContainer" CdmEntityContainer="CreativeWebDesigndotNetProject_dbEntities2">
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivity">
+          <ScalarProperty Name="WindowClicked" ColumnName="WindowClicked" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+          <ScalarProperty Name="TimeSpentOnWindow" ColumnName="TimeSpentOnWindow" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRecords">
+      <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserRecord">
+        <MappingFragment StoreEntitySet="UserRecords">
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="RoleInOrganization" ColumnName="RoleInOrganization" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+          <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+          <ScalarProperty Name="TimeOnSite" ColumnName="TimeOnSite" />
+          <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

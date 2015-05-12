@@ -1,0 +1,304 @@
+@charset "UTF-8";
+/* fake a uStyle base */
+.us-help, .csstransforms .us-help-inner {
+  display: block;
+  padding: 1em 1.5em;
+  color: #666;
+  background-color: #fff;
+  border: 2px solid #00BCFE;
+  border-radius: 3px;
+}
+.us-help *, .csstransforms .us-help-inner * {
+  margin: 0;
+}
+
+.us-help {
+  margin: 1em 0;
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+.csstransforms .us-help {
+  position: relative;
+  width: 36px;
+  margin: 0;
+  padding: 0;
+  color: #99E2FF;
+  background: transparent;
+  border: none;
+}
+.csstransforms .us-help:after {
+  content: "";
+    position: absolute;
+  left: 0;
+  top: 7px;
+  width: 36px;
+  z-index: 49;
+  color: #fff;
+  font-size: 24px;
+  font-family: "FS Elliot Web Bold", Helvetica, Arial, sans-serif;
+  line-height: 1;
+  text-align: center;
+}
+
+.us-help-icon {
+  display: none;
+}
+.csstransforms
+.us-help-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5em;
+  line-height: 1;
+  font-size: 36px;
+  -moz-transform: transformZ(0);
+  -ms-transform: transformZ(0);
+  -webkit-transform: transformZ(0);
+  transform: transformZ(0);
+}
+.csstransforms
+.us-help-icon:before, .csstransforms
+.us-help-icon:after {
+  /*content: "";*/
+  position: relative;
+  z-index: 48;
+  color: #ccc;
+  font-family: "uswitch-icon", sans-serif;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.csstransforms
+.us-help-icon:after {
+  /*content: "";*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 46;
+  -moz-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+.csstransforms .us-help-area:hover
+.us-help-icon:before, .csstransforms .us-help-area:hover
+.us-help-icon:after {
+  color: #00BCFE;
+}
+.csstransforms .us-help-area:hover
+.us-help-icon:after {
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.us-help-inner {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.csstransforms .us-help-inner {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 9999px;
+  z-index: 50;
+  width: 200px;
+  opacity: 0;
+  -moz-transform: translate3d(10px, 0, 0);
+  -ms-transform: translate3d(10px, 0, 0);
+  -webkit-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+  -moz-transition: opacity 300ms, -moz-transform 300ms, right 0;
+  -o-transition: opacity 300ms, -o-transform 300ms, right 0;
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms, right 0;
+  transition: opacity 300ms, transform 300ms, right 0;
+  -moz-transition-delay: 0, 0, 300ms;
+  -o-transition-delay: 0, 0, 300ms;
+  -webkit-transition-delay: 0, 0, 300ms;
+  transition-delay: 0, 0, 300ms;
+}
+.csstransforms .us-help-inner:before, .csstransforms .us-help-inner:after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  /*border-color: transparent #00BCFE;*/
+  border-color:  transparent #2575e6;
+}
+.csstransforms .us-help-inner:after {
+  left: -9px;
+  border-right-color: #2575e6;
+}
+.csstransforms .us-help-area:hover .us-help-inner {
+  right: -212px;
+  opacity: 1;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+
+/* SMALL */
+.csstransforms .us-help-small {
+  width: 18px;
+  height: 18px;
+}
+.csstransforms .us-help-small:after {
+  top: 3px;
+  font-size: 13px;
+  width: 18px;
+}
+.csstransforms .us-help-small .us-help-icon {
+  font-size: 18px;
+}
+.csstransforms .us-help-small .us-help-icon:before, .csstransforms .us-help-small .us-help-icon:after {
+  color: #999;
+}
+.csstransforms .us-help-small .us-help-inner {
+  top: -9px;
+}
+.csstransforms .us-help-small.us-help-above-left .us-help-inner, .csstransforms .us-help-small.us-help-above-right .us-help-inner {
+  top: auto;
+  bottom: -7px;
+}
+
+/* DIRECTIONS - default is to have the bubble appearing below right */
+/* above right */
+.csstransforms .us-help-above-left .us-help-inner, .csstransforms
+.us-help-above-right .us-help-inner {
+  top: auto;
+  bottom: 3px;
+}
+.csstransforms .us-help-above-left .us-help-inner:before,
+.csstransforms .us-help-above-left .us-help-inner:after, .csstransforms
+.us-help-above-right .us-help-inner:before, .csstransforms
+.us-help-above-right .us-help-inner:after {
+  top: auto;
+  bottom: 7px;
+}
+
+/* below left */
+.us-help-above-left .us-help-icon:after,
+.us-help-below-left .us-help-icon:after {
+  /*content: "";*/
+}
+.us-help-above-left .us-help-inner,
+.us-help-below-left .us-help-inner {
+  -moz-transform: translate3d(-10px, 0, 0);
+  -ms-transform: translate3d(-10px, 0, 0);
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+}
+.csstransforms .us-help-area:hover .us-help-above-left .us-help-inner, .csstransforms .us-help-area:hover
+.us-help-below-left .us-help-inner {
+  right: auto;
+  left: -212px;
+}
+.csstransforms .us-help-area:hover .us-help-above-left .us-help-inner:before,
+.csstransforms .us-help-area:hover .us-help-above-left .us-help-inner:after, .csstransforms .us-help-area:hover
+.us-help-below-left .us-help-inner:before, .csstransforms .us-help-area:hover
+.us-help-below-left .us-help-inner:after {
+  left: auto;
+  right: -10px;
+  border-width: 10px 0 10px 10px;
+}
+.csstransforms .us-help-area:hover .us-help-above-left .us-help-inner:after, .csstransforms .us-help-area:hover
+.us-help-below-left .us-help-inner:after {
+  left: auto;
+  right: -9px;
+  border-left-color: #fff;
+}
+
+/* above left */
+/* below */
+.csstransforms
+.us-help-below .us-help-inner {
+  -moz-transform: translate3d(0, 10px, 0);
+  -ms-transform: translate3d(0, 10px, 0);
+  -webkit-transform: translate3d(0, 10px, 0);
+  transform: translate3d(0, 10px, 0);
+  top: 100%;
+  margin-top: 10px;
+  margin-left: -100px;
+}
+.csstransforms
+.us-help-below .us-help-inner:before, .csstransforms
+.us-help-below .us-help-inner:after {
+  left: 50%;
+  top: -10px;
+  margin-left: -10px;
+  border-width: 0 10px 10px 10px;
+  /*border-color: #00BCFE transparent;*/
+  border-color: #2575e6 transparent;
+}
+.csstransforms
+.us-help-below .us-help-inner:after {
+  left: 50%;
+  top: -9px;
+  border-bottom-color: #fff;
+}
+.csstransforms .us-help-area:hover
+.us-help-below .us-help-inner {
+  left: 50%;
+  right: auto;
+}
+.csstransforms .us-help-area:hover
+.us-help-below .us-help-icon:after {
+  -moz-transform: scaleX(1) rotate(90deg);
+  -ms-transform: scaleX(1) rotate(90deg);
+  -webkit-transform: scaleX(1) rotate(90deg);
+  transform: scaleX(1) rotate(90deg);
+}
+
+.example-help-area {
+  margin: 10px;
+  padding: 30px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 3px #ccc;
+  text-align: center;
+  -moz-transition: background-color 300ms;
+  -o-transition: background-color 300ms;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+.example-help-area:hover {
+  background-color: #eee;
+}
+
+.js .us-help {
+  margin: 0 auto;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+body {
+  background-repeat: no-repeat;
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+}
+*/
+h1, h2, h3 {
+  font-family: "FS Elliot Web Bold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+a {
+  color: #00BCFE;
+}
+
+li {
+  margin: 0.5em 0;
+}

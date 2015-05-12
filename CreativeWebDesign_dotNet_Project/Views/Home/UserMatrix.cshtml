@@ -1,0 +1,380 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+   
+</style>
+<!---<link rel="stylesheet" type="text/css" href="~/Style/main.css" />-->
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1200px)" href="~/Style/userMatrix.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 992px) and (max-width: 1199px)" href="~/Style/ua-md-screen.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 780px) and (max-width: 991px)" href="~/Style/ua-sm-screen.css" />
+<link rel="stylesheet" type="text/css" media="screen and (max-width: 779px)" href="~/Style/ua-xs-screen.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<!---<script type="text/javascript" src="~/Js/angular.min.js"></script>-->
+<script src="https://code.angularjs.org/1.3.14/angular-sanitize.js"></script>
+<script type="text/javascript" src="~/Js/app.js"></script>
+<body ng-app="app" ng-controller="mainController">
+    
+    
+    <!-- Start your code here-->
+    
+    <div id="filter"></div>
+    <div align="center">
+        <h3 id="title" style="color:black"><u>Sample Decision Matrix: Purchasing a car</u></h3>
+    </div>
+    <p id="font" style="text-align: center; color:black">Recently married, having spousal talks about starting a family as soon as possible. In the market for a new car, contemplating between potential familial needs, style, finance and safety.</p>
+    <br />
+
+    <!--popup windows-->
+    <!--Top-->
+
+
+
+
+
+
+    <table class="tg">
+        <tbody class="us-help-area">
+            <tr>
+
+                <th class="tg-ts7t cat" data-window="pacW" style="border-bottom:4px solid lightgray; border-top: 4px solid lightgrey; border-left: 4px solid lightgrey; border-right:4px solid lightgray;">
+                    <!--<div class="pw" id="pacW" style="top:25px; ">
+                        <div class="pwTopArrowBorder">	</div>
+                        <div class="pwTopArrow"></div>
+                        <p style="color:black">Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubili,et.</p>
+                    </div>-->
+                    <p>Purchasing A Car</p>
+
+                </th>
+
+
+                <th class="tg-031e cat" data-window="coupW" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid lightgray;">
+                    <div class="pw" id="coupW" style="top:25px;">
+                        <div class="pwTopArrowBorder">	</div>
+                        <div class="pwTopArrow"></div>
+                        <p>
+                            Feugiat sapien est, facilisis Tellus curae; cubilia. Libero et justo fames netus scelerisque lorem magna imperdiet laoreet conubia.
+                        </p>
+                    </div>
+                    <p>Coupe</p>
+                </th>
+                <th class="tg-031e cat" data-window="sedanW" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid lightgray;">
+                    <div class="pw" id="sedanW" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow" style=""></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Sedan</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="minivanW" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid lightgray;">
+                    <div class="pw" id="minivanW" style="top:25px;">
+                        <div class="pwTopArrowBorder">	</div>
+                        <div class="pwTopArrow"></div>
+                        <p>Feugiat sapien est, facilisis Tellus curae; cubilia. Libero et justo fames netus scelerisque lorem magna imperdiet laoreet conubia.</p>
+                    </div>
+                    <p>Minivan</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="weightsW" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                    <div class="pw" id="weightsW" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Weights</p>
+                </th>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="aycW" style="border-right: 4px solid black; border-left: 4px solid lightgrey;">
+                    <div class="pwLeft" id="aycW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Average Yearly Cost</p>
+                </th>
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="AverageYearlyCost_Coup" src="{{infoImage}}" data-slider="s1" data-info="<div align='left'><ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American coupe costs $9,122, or about 60.8 cents a mile. <div class='ssLink' data-window='ssExample1' data-ss='1' data-link='examplelink1.com' style='display:inline'>example1</div> </li></ul></div>" data-help="Dreamcatcher wayfarers drinking vinegar, occupy mumblecore locavore sartorial. Forage cornhole vinyl DIY chambray. Four loko gluten-free next level, " class="info"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="AverageYearlyCost_Sedan" ng-src="{{infoImage}}" class="info" data-slider="s2" data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American sedan costs $8,059, or about 53.7 cents a mile. <div class='ssLink' data-window='ssExample2' data-ss='2' data-link='examplelink2.com' style='display:inline'>example2</div> </li></ul>" data-help="Williamsburg messenger bag hella scenester occupy beard. Organic gastropub blog chillwave, Tumblr heirloom Bushwick. Portland chillwave retro Pinterest "></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="AverageYearlyCost_Minivan" ng-src="{{infoImage}}" data-slider="s3" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-s6z2">
+                    <output for="fader"  ng-bind="val12" id="volume12">0</output>
+                    <span ng-click="val12 = sliderMinus(val12)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val12" step="1" type="range" value="0">
+
+                    <span ng-click="val12 = sliderPlus(val12)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="fdW" style="border-left: 4px solid lightgrey; border-right: 4px solid black">
+                    <div class="pwLeft" id="fdW" style="">
+                        <div class="pwLeftArrowBorder">	</div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Feugiat sapien est, facilisis Tellus curae; cubilia. Libero et justo fames netus scelerisque lorem magna imperdiet laoreet conubia.</p>
+                    </div>
+                    <p>Family Demographics</p>
+                </th>
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="FamilyDemographics_Coupe" ng-src="{{infoImage}}" data-slider="s4" class="info" data-info="<ul><li>Becomes a burden when driving more than one passenger as people are forced to climb into the back seats, unfriendly towards the elderly and physically handicapped, difficult to set up baby seats. <div class='ssLink' data-window='ssExample4' data-ss='4 ' data-link='examplelink1.com' style='display:inline'>example4</div> </li></ul>" data-help="Vice normcore bespoke pour-over wolf. Mlkshk cornhole Pitchfork deep v fixie. Before they sold out slow-carb plaid photo booth banh mi. Hoodie kogi Godard, "></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="FamilyDemographics_Sedan" ng-src="{{infoImage}}" data-slider="s5" class="info" data-info="<ul><li>Family members have the luxury of opening their own door and climb in instead of doing jungle gym moves just to get to the back seat. Adequate space for baby seats and more trunk space for familial duties. <div class='ssLink' data-window='ssExample1' data-ss='5' data-link='examplelink5.com' style='display:inline'>example5</div> </li></ul>" data-help="seitan lumbersexual Tumblr banh mi blog stumptown letterpress. Next level wayfarers Intelligentsia heirloom High Life street art. ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="FamilyDemographics_MiniVan" ng-src="{{infoImage}}" data-slider="s6" class="info" data-info="<ul><li>Spacious, convenient for larger families that commute together while also preserving comfort, plenty of space for baby seats and more trunk space for familial duties. <div class='ssLink' data-window='ssExample6' data-ss='6' data-link='examplelink6.com' style='display:inline'>example6</div> </li></ul>" data-help="Lomo American Apparel direct trade jean shorts, stumptown art party gastropub. Mixtape Wes Anderson church-key tofu, typewriter shabby chic meh vegan."></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-s6z2">
+                    <output for="fader4" ng-bind="val4" id="volume4">0</output>
+                    <span ng-click="val4 = sliderMinus(val4)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input class="range" data-id="familyDemographicWeight" style="display:inline" id="fader4" max="10" min="0" ng-model="val4" step="1" type="range" value="0">
+
+                    <span ng-click="val4 = sliderPlus(val4)"> <img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="styleW" style="border-left: 4px solid lightgrey; border-right: 4px solid black">
+                    <div class="pwLeft" id="styleW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Style</p>
+                </th>
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="Style_Coupe" data-slider="s7" class="info" data-info="<ul><li>Sleek, stylish, clean, sporty, with a more dramatic design. <div class='ssLink' data-window='ssExample1' data-ss='7' data-link='examplelink7.com' style='display:inline'>example7</div> </li></ul>" data-help="Single-origin coffee gluten-free retro, synth shabby chic meggings jean shorts High Life Brooklyn church-key. XOXO food truck Odd Future sartorial chambray"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="Style_Sedan" data-slider="s8" class="info" data-info="<ul><li>Conventional, plain. <div class='ssLink' data-window='ssExample8' data-ss='8' data-link='examplelink8.com' style='display:inline'>example8</div> </li></ul>" data-help="next level, Intelligentsia Echo Park heirloom. Pork belly hashtag cliche, direct trade locavore High Life food truck retro YOLO XOXO. Tofu synth High Life ugh,"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="Style_MiniVan" data-slider="s9" class="info" data-info="<ul><li>Large, bulky. <div class='ssLink' data-window='ssExample1' data-ss='9' data-link='examplelink9.com' style='display:inline'>example9</div> </li></ul>" data-help="selfies 8-bit disrupt. Irony sriracha Intelligentsia, occupy disrupt PBR&B readymade next level Marfa narwhal plaid. Swag tofu flexitarian art party"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-s6z2">
+                    <output for="fader8" ng-bind="val8" id="volume8">0</output>
+                    <span ng-click="val8 = sliderMinus(val8)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input class="range" data-id="styleWeight" style="display:inline" id="fader8" max="10" min="0" ng-model="val8" step="1" type="range" value="0">
+
+                    <span ng-click="val8 = sliderPlus(val8)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="srW">
+                    <div class="pwLeft" id="srW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Feugiat sapien est, facilisis Tellus curae; cubilia. Libero et justo fames netus scelerisque lorem magna imperdiet laoreet conubia.</p>
+                    </div>
+                    <p>Safety Rating</p>
+                </th>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="SafetyRating_Coupe" data-slider="s10" class="info" data-info="<ul><li>Based on AAAs safety rating analysis which factors in front, rear and side collision protection, electronic stability, rollover rate, etc., the coupe received a safety rating of 8.1/10. <div class='ssLink' data-window='ssExample1' data-ss='10' data-link='examplelink10.com' style='display:inline'>example10</div> </li></ul>" data-help="raw denim fashion axe twee actually. VHS Kickstarter hoodie, locavore street art Shoreditch selfies Wes Anderson put a bird on it Etsy umami tousled cronut PBR"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="SafetyRating_Sedan" data-slider="s11" class="info" data-info="<ul><li>Based on AAAs safety rating analysis which factors in front, rear and side collision protection, electronic stability, rollover rate, etc., the sedan received a safety rating of 8.6/10. <div class='ssLink' data-window='ssExample1' data-ss='11' data-link='examplelink11.com' style='display:inline'>example11</div> </li></ul>" data-help="Fashion axe listicle Shoreditch Carles cronut. Crucifix stumptown seitan, dreamcatcher food truck lo-fi Blue Bottle fingerstache farm-to-table. 8-bit"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img ng-src="{{infoImage}}" data-window="SafetyRating_MiniVan" data-slider="s12" data-info="<ul><li>Based on AAAs safety rating analysis which factors in front, rear and side collision protection, electronic stability, rollover rate, etc., the minivan received a safety rating of 8.9/10. <div class='ssLink' data-window='ssExample1' data-ss='12' data-link='examplelink12.com' style='display:inline'>example12</div> </li></ul>" data-help="fingerstache migas, Godard iPhone messenger bag XOXO heirloom 90's you probably haven't heard of them health goth Williamsburg hoodie. Craft beer +1" class="info"></img>
+
+                    </div>
+                </td>
+
+                <td class="tg-s6z2">
+                    <output for="fader16" ng-bind="val16" id="volume16">0</output>
+                    <span ng-click="val16 = sliderMinus(val16)"> <img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input class="range" data-id="saftyRatingfWeight" style="display:inline" id="fader16" max="10" min="0" ng-model="val16" step="1" type="range" value="0">
+
+                    <span ng-click="val16 = sliderPlus(val16)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="choiceW">
+                    <div class="pwLeft" id="choiceW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Choice</p>
+                </th>
+
+                <td class="tg-031e" align="center">
+                    <input data-value="coupe" id="coupeCheckBox" value="coupe" data-id="coupeCheckBox" name="radAnswer" type="checkbox" checked="false">
+                    <label for="coupeCheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td class="tg-031e" align="center">
+                    <input data-value="sedan" id="sedanCheckBox" value="sedan" data-id="sedanCheckBox" name="radAnswer2" type="checkbox" checked="false">
+                    <label for="sedanCheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td value="minivan" class="tg-031e" align="center">
+                    <input data-value="minivan" id="minivanCheckBox" data-id="minivanCheckBox" name="radAnswer3" type="checkbox" checked="false">
+                    <label for="minivanCheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td class="tg-031e"></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Modal-->
+
+    <div style="position: fixed; width: 100%; top: 100px" align="center">
+        <div id="modal" style="display:none; width: 500px; background-color: white; border: 2px solid white; border-radius: 7px;">
+            <div class="modal-header" align="center">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+                <h3>Info</h3>
+            </div>
+
+            <div id="infoWindow">
+
+
+                <div id="modalContent">
+                    <!--<p style="display:inline">superscript link
+                        <div class="sW" data-window="ssExample" style="display:inline">
+                            <sup >example</sup>
+                            <div style="transform: translate(-85px, -37px);" class="ssPW" id="ssExample" style="">
+                                <div class="ssArrowBorder"></div>
+                                <div class="ssArrow" ></div>
+                                <a target="blank" href="blank">examplelink.com</a>
+                            </div>
+
+                        </div>
+                    </p>-->
+                    <p id="modalInfo"></p>
+
+                    <!--<p ng-bind-html="modalContent"></p>-->
+                    <br><br>
+                    <output for="fader10" id="modalOutput" ng-bind="sliderValues[currentSlider]">0</output>
+                    <div id="modalInput">
+                        <span id="modalSlider" ng-click="sliderValues[currentSlider] = sliderMinus(sliderValues[currentSlider])"><img class="rangeButton" height="20px" width="20px" ng-src="{{minusImage}}"></span>
+                        <input class="range" id="fader10" data-id="" style="display:inline" max="10" min="0" step="1" type="range" ng-model="sliderValues[currentSlider]">
+
+                        <span ng-click="sliderValues[currentSlider] = sliderPlus(sliderValues[currentSlider])"> <img class="rangeButton" height="20px" width="20px" ng-src="{{plusImage}}"></span>
+
+
+                    </div>
+                    <br>
+
+
+                </div>
+            </div>
+
+            <div id="helpWindow" style="display:none">
+
+                <p>Lourem Ipsum Lourem Ipsum</p>
+            </div>
+            <br>
+
+
+            <div class="modal-footer">
+                <div class="pull-left">
+
+                    <!--<img id="helpButton" class="rangeButton" src="Images/qm_big.jpg">
+                    <button style="display:none" id="backButton" class="btn">Back</button>-->
+                    <!--<div class="us-help-area" style="cursor:pointer;">-->
+                    <div id="helpButton">
+
+                        <img style="height:18px" class="us-help-icon rangeButton" src="~/Images/qmLargeFont.jpg">
+                        <span id="qm" style="color: #FFF;position: absolute; -webkit-transform: translate(-14px, 2px); transform: translate(-14px, 2px); font-size: 15px; font-weight: bold;">?</span>
+                    </div>
+
+                    <div class="pwBottom" id="helpW" style="text-align:left; -webkit-transform: translate(-82px,22px); transform: translate(-82px,22px);">
+                        <div class="pwBottomArrowBorder"></div>
+                        <div class="pwBottomArrow"></div>
+                        <p style="color:black">Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum</p>
+
+
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button id="closeButton" class="btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span name="userID" id="userID" data-value="@ViewBag.userId"></span>
+    <form id="sendUA" action="@Url.Action("PostUserMatrix", "Home")" style="cursor:pointer">
+        <div align="center">
+        <p style="background-color: rgb(37, 117, 230); width: 90px; color: white; border: 4px solid rgb(211, 211, 211); padding: 4px; margin-top: 40px;">END SURVEY</p>
+        </div>
+    </form>
+    <!----<footer style="bottom:0; position:absolute;">
+        <div style="padding-left:15px;"><p>Built by <a href="http://christopherfisher.azurewebsites.net" style="color:turqoise">Christopher Fisher</p></div>
+    </footer>-->
+    
+</body>

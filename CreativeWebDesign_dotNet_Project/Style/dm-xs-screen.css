@@ -1,0 +1,32 @@
+﻿body {
+    background-color: red;
+    color:white;
+    padding:50px;
+    padding-top:30px;
+}
+
+.formLabel{
+    height: 35px;
+    width: 90px;
+    background-color: #000;
+    padding: 5px;
+    /*display:inline; float:left;
+    display:inline; 
+        float:left;*/
+    border: 3px solid lightgrey;
+}
+
+.radioFormLabel{
+    height: 35px;
+    width: 90px;
+    background-color: #000;
+    padding: 5px;
+    /*display:inline; float:left;*/
+    border: 3px solid lightgrey;
+   
+}
+
+.radioBox{
+    /*display:inline; 
+    float:left;*/
+}

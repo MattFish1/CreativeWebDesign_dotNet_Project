@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CreativeWebDesigndotNetProject_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="UserActivity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WindowClicked" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderClicked" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeSpentOnWindow" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeLoggedIn" Type="datetime" StoreGeneratedPattern="Computed" />
+    <Property Name="TimeLoggedOff" Type="datetime" />
+    <Property Name="TimeOnSite" Type="nvarchar" MaxLength="50" />
+    <Property Name="UsersActivity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Organization" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleInOrganization" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="StreetAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="nvarchar" MaxLength="50" />
+    <Property Name="Education" Type="nvarchar" MaxLength="50" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__UserActiv__UserI__3E52440B">
+    <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />
+    <End Role="UserActivity" Type="Self.UserActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRecords">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserActivity">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CreativeWebDesigndotNetProject_dbModelStoreContainer">
+    <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRecords" EntityType="Self.UserRecords" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UserActiv__UserI__3E52440B" Association="Self.FK__UserActiv__UserI__3E52440B">
+      <End Role="UserRecords" EntitySet="UserRecords" />
+      <End Role="UserActivity" EntitySet="UserActivity" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

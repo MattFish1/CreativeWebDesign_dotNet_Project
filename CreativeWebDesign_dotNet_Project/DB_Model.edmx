@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CreativeWebDesigndotNetProject_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ActivityArray" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserActivity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ElementClicked" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderClicked" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeSpentOnElement" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElementType" Type="nchar" MaxLength="10" />
+          <Property Name="ElementValue" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeLoggedIn" Type="datetime" />
+          <Property Name="TimeLoggedOff" Type="datetime" />
+          <Property Name="TimeOnMatrix" Type="nvarchar" MaxLength="500" />
+          <Property Name="TimeOnLandingPage" Type="nvarchar" MaxLength="500" />
+          <Property Name="UsersActivity" Type="nvarchar" MaxLength="500" />
+          <Property Name="Organization" Type="nvarchar" MaxLength="500" />
+          <Property Name="RoleInOrganization" Type="nvarchar" MaxLength="500" />
+          <Property Name="State" Type="nvarchar" MaxLength="500" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="City" Type="nvarchar" MaxLength="500" />
+          <Property Name="StreetAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="500" />
+          <Property Name="Age" Type="nvarchar" MaxLength="500" />
+          <Property Name="Education" Type="nvarchar" MaxLength="500" />
+          <Property Name="Occupation" Type="nvarchar" MaxLength="500" />
+          <Property Name="FinalChoice" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__UserActiv__UserI__5165187F">
+          <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />
+          <End Role="UserActivity" Type="Self.UserActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRecords">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserActivity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CreativeWebDesigndotNetProject_dbModelStoreContainer">
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRecords" EntityType="Self.UserRecords" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__UserActiv__UserI__5165187F" Association="Self.FK__UserActiv__UserI__5165187F">
+            <End Role="UserRecords" EntitySet="UserRecords" />
+            <End Role="UserActivity" EntitySet="UserActivity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CreativeWebDesigndotNetProject_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ActivityArray" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TimeLoggedIn" Type="DateTime" Precision="3" />
+          <Property Name="TimeLoggedOff" Type="DateTime" Precision="3" />
+          <Property Name="TimeOnMatrix" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TimeOnLandingPage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UsersActivity" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Organization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RoleInOrganization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StreetAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Education" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Occupation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserActivities" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F" FromRole="UserRecord" ToRole="UserActivity" />
+        </EntityType>
+        <EntityContainer Name="CreativeWebDesigndotNetProject_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+          <EntitySet Name="UserRecords" EntityType="Self.UserRecord" />
+          <EntitySet Name="UserActivities" EntityType="CreativeWebDesigndotNetProject_dbModel.UserActivity" />
+          <AssociationSet Name="FK__UserActiv__UserI__5165187F" Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F">
+            <End Role="UserRecord" EntitySet="UserRecords" />
+            <End Role="UserActivity" EntitySet="UserActivities" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="UserActivity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElementClicked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderClicked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeSpentOnElement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElementType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ElementValue" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="UserRecord" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F" FromRole="UserActivity" ToRole="UserRecord" />
+        </EntityType>
+        <Association Name="FK__UserActiv__UserI__5165187F">
+          <End Type="CreativeWebDesigndotNetProject_dbModel.UserRecord" Role="UserRecord" Multiplicity="0..1" />
+          <End Type="CreativeWebDesigndotNetProject_dbModel.UserActivity" Role="UserActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRecord">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserActivity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CreativeWebDesigndotNetProject_dbModelStoreContainer" CdmEntityContainer="CreativeWebDesigndotNetProject_dbEntities">
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ActivityArray" ColumnName="ActivityArray" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRecords">
+            <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserRecord">
+              <MappingFragment StoreEntitySet="UserRecords">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+                <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+                <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
+                <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
+                <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="RoleInOrganization" ColumnName="RoleInOrganization" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserActivities">
+            <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserActivity">
+              <MappingFragment StoreEntitySet="UserActivity">
+                <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
+                <ScalarProperty Name="ElementType" ColumnName="ElementType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
+                <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+                <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

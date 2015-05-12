@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "CreativeWebDesigndotNetProject",
+            "location": "West US"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "CreativeWebDesigndotNetProject_db",
+                "serverName": "dcwkwlpic8",
+                "user": "Matt",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "Central US"
+            }
+        ]
+    }
+}
