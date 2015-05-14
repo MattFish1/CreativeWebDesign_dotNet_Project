@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CreativeWebDesigndotNetProject_dbModelStoreContainer" CdmEntityContainer="CreativeWebDesigndotNetProject_dbEntities">
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ActivityArray" ColumnName="ActivityArray" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRecords">
+      <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserRecord">
+        <MappingFragment StoreEntitySet="UserRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+          <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+          <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
+          <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
+          <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="RoleInOrganization" ColumnName="RoleInOrganization" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivity">
+          <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
+          <ScalarProperty Name="ElementType" ColumnName="ElementType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
+          <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+          <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

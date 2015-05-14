@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarDecision_DBModelStoreContainer" CdmEntityContainer="CarDecision_DBEntities">
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="CarDecision_DBModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
+          <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+          <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ElementType" ColumnName="ElementType" />
+          <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRecords">
+      <EntityTypeMapping TypeName="CarDecision_DBModel.UserRecord">
+        <MappingFragment StoreEntitySet="UserRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+          <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+          <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
+          <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
+          <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="RoleInOrganization" ColumnName="RoleInOrganization" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
