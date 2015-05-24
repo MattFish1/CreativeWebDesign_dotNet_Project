@@ -13,10 +13,10 @@ namespace CreativeWebDesign_dotNet_Project
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CreativeWebDesigndotNetProject_dbEntities : DbContext
+    public partial class CarDecision_DBEntities1 : DbContext
     {
-        public CreativeWebDesigndotNetProject_dbEntities()
-            : base("name=CreativeWebDesigndotNetProject_dbEntities")
+        public CarDecision_DBEntities1()
+            : base("name=CarDecision_DBEntities1")
         {
         }
     

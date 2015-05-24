@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CreativeWebDesigndotNetProject_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="ErrorLog">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="ActivityArray" Type="nvarchar" MaxLength="500" />
-    <Property Name="UserId" Type="nvarchar" MaxLength="50" />
-  </EntityType>
+<Schema Namespace="CarDecision_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="UserActivity">
     <Key>
       <PropertyRef Name="Id" />
@@ -30,23 +22,25 @@
     <Property Name="TimeOnMatrix" Type="nvarchar" MaxLength="500" />
     <Property Name="TimeOnLandingPage" Type="nvarchar" MaxLength="500" />
     <Property Name="UsersActivity" Type="nvarchar" MaxLength="500" />
-    <Property Name="Organization" Type="nvarchar" MaxLength="500" />
-    <Property Name="RoleInOrganization" Type="nvarchar" MaxLength="500" />
-    <Property Name="State" Type="nvarchar" MaxLength="500" />
-    <Property Name="ZipCode" Type="nvarchar" MaxLength="10" />
-    <Property Name="City" Type="nvarchar" MaxLength="500" />
-    <Property Name="StreetAddress" Type="nvarchar" MaxLength="500" />
-    <Property Name="Password" Type="nvarchar" MaxLength="500" />
-    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="500" />
-    <Property Name="Email" Type="nvarchar" MaxLength="500" />
-    <Property Name="Gender" Type="nvarchar" MaxLength="500" />
-    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="500" />
     <Property Name="Age" Type="nvarchar" MaxLength="500" />
-    <Property Name="Education" Type="nvarchar" MaxLength="500" />
-    <Property Name="Occupation" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="500" />
+    <Property Name="Job" Type="nvarchar" MaxLength="500" />
+    <Property Name="JobOther" Type="nvarchar" MaxLength="10" />
+    <Property Name="HighSchool" Type="nvarchar" MaxLength="500" />
+    <Property Name="YearGraduatedHS" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlaceHS" Type="nvarchar" MaxLength="500" />
+    <Property Name="BachelorsComp" Type="nvarchar" MaxLength="500" />
+    <Property Name="YearGraduatedBA" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlaceBA" Type="nvarchar" MaxLength="500" />
+    <Property Name="MastersComp" Type="nvarchar" MaxLength="500" />
+    <Property Name="YearGraduatedMST" Type="nvarchar" MaxLength="500" />
+    <Property Name="PlaceMST" Type="nvarchar" MaxLength="500" />
+    <Property Name="Employer" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmployedSince" Type="nvarchar" MaxLength="500" />
+    <Property Name="CurrentCar" Type="nvarchar" MaxLength="500" />
     <Property Name="FinalChoice" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__UserActiv__UserI__5165187F">
+  <Association Name="FK__UserActiv__UserI__36B12243">
     <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />
     <End Role="UserActivity" Type="Self.UserActivity" Multiplicity="*" />
     <ReferentialConstraint>
@@ -58,11 +52,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CreativeWebDesigndotNetProject_dbModelStoreContainer">
-    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+  <EntityContainer Name="CarDecision_DBModelStoreContainer">
     <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRecords" EntityType="Self.UserRecords" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__UserActiv__UserI__5165187F" Association="Self.FK__UserActiv__UserI__5165187F">
+    <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="Self.FK__UserActiv__UserI__36B12243">
       <End Role="UserRecords" EntitySet="UserRecords" />
       <End Role="UserActivity" EntitySet="UserActivity" />
     </AssociationSet>

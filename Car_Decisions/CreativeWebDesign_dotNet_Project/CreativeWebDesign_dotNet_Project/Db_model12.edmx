@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CreativeWebDesigndotNetProject_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CarDecision_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="UserActivity">
           <Key>
             <PropertyRef Name="Id" />
@@ -57,7 +57,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CreativeWebDesigndotNetProject_dbModelStoreContainer">
+        <EntityContainer Name="CarDecision_DBModelStoreContainer">
           <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRecords" EntityType="Self.UserRecords" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="Self.FK__UserActiv__UserI__36B12243">
@@ -65,36 +65,29 @@
             <End Role="UserActivity" EntitySet="UserActivity" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CreativeWebDesigndotNetProject_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CreativeWebDesigndotNetProject_dbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="UserActivities" EntityType="CreativeWebDesigndotNetProject_dbModel.UserActivity" />
-          <EntitySet Name="UserRecords" EntityType="CreativeWebDesigndotNetProject_dbModel.UserRecord" />
-          <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243">
-            <End Role="UserRecord" EntitySet="UserRecords" />
-            <End Role="UserActivity" EntitySet="UserActivities" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="CarDecision_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="UserActivity">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ElementClicked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OrderClicked" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TimeSpentOnElement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ElementType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="ElementValue" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="UserRecord" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243" FromRole="UserActivity" ToRole="UserRecord" />
+          <NavigationProperty Name="UserRecord" Relationship="Self.FK__UserActiv__UserI__36B12243" FromRole="UserActivity" ToRole="UserRecords" />
         </EntityType>
         <EntityType Name="UserRecord">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TimeLoggedIn" Type="DateTime" Precision="3" />
           <Property Name="TimeLoggedOff" Type="DateTime" Precision="3" />
           <Property Name="TimeOnMatrix" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -117,13 +110,13 @@
           <Property Name="EmployedSince" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CurrentCar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserActivities" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243" FromRole="UserRecord" ToRole="UserActivity" />
+          <NavigationProperty Name="UserActivities" Relationship="Self.FK__UserActiv__UserI__36B12243" FromRole="UserRecords" ToRole="UserActivity" />
         </EntityType>
         <Association Name="FK__UserActiv__UserI__36B12243">
-          <End Type="CreativeWebDesigndotNetProject_dbModel.UserRecord" Role="UserRecord" Multiplicity="0..1" />
-          <End Type="CreativeWebDesigndotNetProject_dbModel.UserActivity" Role="UserActivity" Multiplicity="*" />
+          <End Role="UserRecords" Type="Self.UserRecord" Multiplicity="0..1" />
+          <End Role="UserActivity" Type="Self.UserActivity" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="UserRecord">
+            <Principal Role="UserRecords">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="UserActivity">
@@ -131,51 +124,59 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="CarDecision_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserActivities" EntityType="Self.UserActivity" />
+          <EntitySet Name="UserRecords" EntityType="Self.UserRecord" />
+          <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="Self.FK__UserActiv__UserI__36B12243">
+            <End Role="UserRecords" EntitySet="UserRecords" />
+            <End Role="UserActivity" EntitySet="UserActivities" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CreativeWebDesigndotNetProject_dbModelStoreContainer" CdmEntityContainer="CreativeWebDesigndotNetProject_dbEntities">
+        <EntityContainerMapping StorageEntityContainer="CarDecision_DBModelStoreContainer" CdmEntityContainer="CarDecision_DBEntities1">
           <EntitySetMapping Name="UserActivities">
-            <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserActivity">
+            <EntityTypeMapping TypeName="CarDecision_DBModel.UserActivity">
               <MappingFragment StoreEntitySet="UserActivity">
-                <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
-                <ScalarProperty Name="ElementType" ColumnName="ElementType" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
-                <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
-                <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
+                <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+                <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ElementType" ColumnName="ElementType" />
+                <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserRecords">
-            <EntityTypeMapping TypeName="CreativeWebDesigndotNetProject_dbModel.UserRecord">
+            <EntityTypeMapping TypeName="CarDecision_DBModel.UserRecord">
               <MappingFragment StoreEntitySet="UserRecords">
-                <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
-                <ScalarProperty Name="CurrentCar" ColumnName="CurrentCar" />
-                <ScalarProperty Name="EmployedSince" ColumnName="EmployedSince" />
-                <ScalarProperty Name="Employer" ColumnName="Employer" />
-                <ScalarProperty Name="PlaceMST" ColumnName="PlaceMST" />
-                <ScalarProperty Name="YearGraduatedMST" ColumnName="YearGraduatedMST" />
-                <ScalarProperty Name="MastersComp" ColumnName="MastersComp" />
-                <ScalarProperty Name="PlaceBA" ColumnName="PlaceBA" />
-                <ScalarProperty Name="YearGraduatedBA" ColumnName="YearGraduatedBA" />
-                <ScalarProperty Name="BachelorsComp" ColumnName="BachelorsComp" />
-                <ScalarProperty Name="PlaceHS" ColumnName="PlaceHS" />
-                <ScalarProperty Name="YearGraduatedHS" ColumnName="YearGraduatedHS" />
-                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
-                <ScalarProperty Name="JobOther" ColumnName="JobOther" />
-                <ScalarProperty Name="Job" ColumnName="Job" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
-                <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
-                <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
-                <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
-                <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+                <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+                <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
+                <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
+                <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="JobOther" ColumnName="JobOther" />
+                <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+                <ScalarProperty Name="YearGraduatedHS" ColumnName="YearGraduatedHS" />
+                <ScalarProperty Name="PlaceHS" ColumnName="PlaceHS" />
+                <ScalarProperty Name="BachelorsComp" ColumnName="BachelorsComp" />
+                <ScalarProperty Name="YearGraduatedBA" ColumnName="YearGraduatedBA" />
+                <ScalarProperty Name="PlaceBA" ColumnName="PlaceBA" />
+                <ScalarProperty Name="MastersComp" ColumnName="MastersComp" />
+                <ScalarProperty Name="YearGraduatedMST" ColumnName="YearGraduatedMST" />
+                <ScalarProperty Name="PlaceMST" ColumnName="PlaceMST" />
+                <ScalarProperty Name="Employer" ColumnName="Employer" />
+                <ScalarProperty Name="EmployedSince" ColumnName="EmployedSince" />
+                <ScalarProperty Name="CurrentCar" ColumnName="CurrentCar" />
+                <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

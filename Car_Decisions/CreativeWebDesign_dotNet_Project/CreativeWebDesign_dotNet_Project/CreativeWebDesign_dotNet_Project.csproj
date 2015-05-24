@@ -175,38 +175,23 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="CarDecision_Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarDecision_Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarDecision_Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarDecision_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CarDecision_Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarDecision_Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DB_Model.Context.cs">
+    <Compile Include="Db_model12.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DB_Model.Context.tt</DependentUpon>
+      <DependentUpon>Db_model12.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB_Model.cs">
+    <Compile Include="Db_model12.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DB_Model.tt</DependentUpon>
+      <DependentUpon>Db_model12.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB_Model.Designer.cs">
+    <Compile Include="Db_model12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DB_Model.edmx</DependentUpon>
+      <DependentUpon>Db_model12.edmx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,21 +202,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="UserActivity.cs">
-      <DependentUpon>DB_Model.tt</DependentUpon>
+      <DependentUpon>Db_model12.tt</DependentUpon>
     </Compile>
     <Compile Include="UserRecord.cs">
-      <DependentUpon>DB_Model.tt</DependentUpon>
+      <DependentUpon>Db_model12.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Js\carVideo.js" />
+    <Content Include="Js\init.js" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\jquery.scrolly.min.js" />
+    <Content Include="Js\skel.min.js" />
     <Content Include="Style\demographics.css" />
     <Content Include="Extra\info.jpg" />
     <Content Include="Extra\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Style\images\cars.jpg" />
     <Content Include="Style\Site.css" />
     <Content Include="Images\back1.jpg" />
     <Content Include="Images\back2.jpg" />
@@ -270,39 +261,22 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Images\help.odg" />
     <Content Include="Images\Thumbs.db" />
-    <EntityDeploy Include="DB_Model.edmx">
+    <EntityDeploy Include="Db_model12.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DB_Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Db_model12.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DB_Model.Context.tt">
+    <Content Include="Db_model12.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB_Model.edmx</DependentUpon>
-      <LastGenOutput>DB_Model.Context.cs</LastGenOutput>
+      <DependentUpon>Db_model12.edmx</DependentUpon>
+      <LastGenOutput>Db_model12.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB_Model.edmx.diagram">
-      <DependentUpon>DB_Model.edmx</DependentUpon>
+    <Content Include="Db_model12.edmx.diagram">
+      <DependentUpon>Db_model12.edmx</DependentUpon>
     </Content>
-    <Content Include="DB_Model.tt">
+    <Content Include="Db_model12.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DB_Model.edmx</DependentUpon>
-      <LastGenOutput>DB_Model.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="CarDecision_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CarDecision_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="CarDecision_Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarDecision_Model.edmx</DependentUpon>
-      <LastGenOutput>CarDecision_Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CarDecision_Model.edmx.diagram">
-      <DependentUpon>CarDecision_Model.edmx</DependentUpon>
-    </Content>
-    <Content Include="CarDecision_Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CarDecision_Model.edmx</DependentUpon>
-      <LastGenOutput>CarDecision_Model.cs</LastGenOutput>
+      <DependentUpon>Db_model12.edmx</DependentUpon>
+      <LastGenOutput>Db_model12.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\CreativeWebDesigndotNetProject.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -324,6 +298,8 @@
     <Content Include="Style\dm-xs-screen.css" />
     <Content Include="Style\helpButton.css" />
     <Content Include="Style\ie-style.css" />
+    <Content Include="Style\skel.css" />
+    <Content Include="Style\style.css" />
     <Content Include="Style\userMatrix.css" />
     <Content Include="Style\ua-md-screen.css" />
     <Content Include="Style\radioButton.css" />

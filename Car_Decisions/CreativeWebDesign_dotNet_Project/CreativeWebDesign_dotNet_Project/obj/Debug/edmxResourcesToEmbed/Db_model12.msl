@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarDecision_DBModelStoreContainer" CdmEntityContainer="CarDecision_DBEntities1">
+    <EntitySetMapping Name="UserActivities">
+      <EntityTypeMapping TypeName="CarDecision_DBModel.UserActivity">
+        <MappingFragment StoreEntitySet="UserActivity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ElementClicked" ColumnName="ElementClicked" />
+          <ScalarProperty Name="OrderClicked" ColumnName="OrderClicked" />
+          <ScalarProperty Name="TimeSpentOnElement" ColumnName="TimeSpentOnElement" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ElementType" ColumnName="ElementType" />
+          <ScalarProperty Name="ElementValue" ColumnName="ElementValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRecords">
+      <EntityTypeMapping TypeName="CarDecision_DBModel.UserRecord">
+        <MappingFragment StoreEntitySet="UserRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />
+          <ScalarProperty Name="TimeLoggedOff" ColumnName="TimeLoggedOff" />
+          <ScalarProperty Name="TimeOnMatrix" ColumnName="TimeOnMatrix" />
+          <ScalarProperty Name="TimeOnLandingPage" ColumnName="TimeOnLandingPage" />
+          <ScalarProperty Name="UsersActivity" ColumnName="UsersActivity" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="JobOther" ColumnName="JobOther" />
+          <ScalarProperty Name="HighSchool" ColumnName="HighSchool" />
+          <ScalarProperty Name="YearGraduatedHS" ColumnName="YearGraduatedHS" />
+          <ScalarProperty Name="PlaceHS" ColumnName="PlaceHS" />
+          <ScalarProperty Name="BachelorsComp" ColumnName="BachelorsComp" />
+          <ScalarProperty Name="YearGraduatedBA" ColumnName="YearGraduatedBA" />
+          <ScalarProperty Name="PlaceBA" ColumnName="PlaceBA" />
+          <ScalarProperty Name="MastersComp" ColumnName="MastersComp" />
+          <ScalarProperty Name="YearGraduatedMST" ColumnName="YearGraduatedMST" />
+          <ScalarProperty Name="PlaceMST" ColumnName="PlaceMST" />
+          <ScalarProperty Name="Employer" ColumnName="Employer" />
+          <ScalarProperty Name="EmployedSince" ColumnName="EmployedSince" />
+          <ScalarProperty Name="CurrentCar" ColumnName="CurrentCar" />
+          <ScalarProperty Name="FinalChoice" ColumnName="FinalChoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
