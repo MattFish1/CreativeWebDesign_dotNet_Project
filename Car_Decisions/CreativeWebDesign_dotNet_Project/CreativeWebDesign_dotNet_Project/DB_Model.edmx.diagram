@@ -5,10 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d429a042f46448049a3abc08383595b6" Name="Diagram1" ZoomLevel="92">
-        <EntityTypeShape EntityType="CreativeWebDesigndotNetProject_dbModel.ErrorLog" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CreativeWebDesigndotNetProject_dbModel.UserRecord" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CreativeWebDesigndotNetProject_dbModel.UserActivity" Width="1.5" PointX="3" PointY="2.5" />
-        <AssociationConnector Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F" />
+        <EntityTypeShape EntityType="CreativeWebDesigndotNetProject_dbModel.UserActivity" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="CreativeWebDesigndotNetProject_dbModel.UserRecord" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -25,8 +25,7 @@ namespace CreativeWebDesign_dotNet_Project
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
-        public virtual DbSet<UserRecord> UserRecords { get; set; }
         public virtual DbSet<UserActivity> UserActivities { get; set; }
+        public virtual DbSet<UserRecord> UserRecords { get; set; }
     }
 }

@@ -1,45 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CreativeWebDesigndotNetProject_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="ErrorLog">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="ActivityArray" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="UserRecord">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TimeLoggedIn" Type="DateTime" Precision="3" />
-    <Property Name="TimeLoggedOff" Type="DateTime" Precision="3" />
-    <Property Name="TimeOnMatrix" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="TimeOnLandingPage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="UsersActivity" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Organization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="RoleInOrganization" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="State" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="City" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="StreetAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="MaritalStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Age" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Education" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Occupation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="UserActivities" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F" FromRole="UserRecord" ToRole="UserActivity" />
-  </EntityType>
   <EntityContainer Name="CreativeWebDesigndotNetProject_dbEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
-    <EntitySet Name="UserRecords" EntityType="Self.UserRecord" />
     <EntitySet Name="UserActivities" EntityType="CreativeWebDesigndotNetProject_dbModel.UserActivity" />
-    <AssociationSet Name="FK__UserActiv__UserI__5165187F" Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F">
+    <EntitySet Name="UserRecords" EntityType="CreativeWebDesigndotNetProject_dbModel.UserRecord" />
+    <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243">
       <End Role="UserRecord" EntitySet="UserRecords" />
       <End Role="UserActivity" EntitySet="UserActivities" />
     </AssociationSet>
@@ -55,9 +19,38 @@
     <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ElementType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="ElementValue" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="UserRecord" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__5165187F" FromRole="UserActivity" ToRole="UserRecord" />
+    <NavigationProperty Name="UserRecord" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243" FromRole="UserActivity" ToRole="UserRecord" />
   </EntityType>
-  <Association Name="FK__UserActiv__UserI__5165187F">
+  <EntityType Name="UserRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeLoggedIn" Type="DateTime" Precision="3" />
+    <Property Name="TimeLoggedOff" Type="DateTime" Precision="3" />
+    <Property Name="TimeOnMatrix" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TimeOnLandingPage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UsersActivity" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Job" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="JobOther" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HighSchool" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YearGraduatedHS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceHS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BachelorsComp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YearGraduatedBA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceBA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MastersComp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YearGraduatedMST" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceMST" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Employer" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="EmployedSince" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentCar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserActivities" Relationship="CreativeWebDesigndotNetProject_dbModel.FK__UserActiv__UserI__36B12243" FromRole="UserRecord" ToRole="UserActivity" />
+  </EntityType>
+  <Association Name="FK__UserActiv__UserI__36B12243">
     <End Type="CreativeWebDesigndotNetProject_dbModel.UserRecord" Role="UserRecord" Multiplicity="0..1" />
     <End Type="CreativeWebDesigndotNetProject_dbModel.UserActivity" Role="UserActivity" Multiplicity="*" />
     <ReferentialConstraint>

@@ -25,20 +25,22 @@ namespace CreativeWebDesign_dotNet_Project
         public string TimeOnMatrix { get; set; }
         public string TimeOnLandingPage { get; set; }
         public string UsersActivity { get; set; }
-        public string Organization { get; set; }
-        public string RoleInOrganization { get; set; }
-        public string State { get; set; }
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string StreetAddress { get; set; }
-        public string Password { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string Gender { get; set; }
-        public string MaritalStatus { get; set; }
         public string Age { get; set; }
-        public string Education { get; set; }
-        public string Occupation { get; set; }
+        public string Sex { get; set; }
+        public string Job { get; set; }
+        public string JobOther { get; set; }
+        public string HighSchool { get; set; }
+        public string YearGraduatedHS { get; set; }
+        public string PlaceHS { get; set; }
+        public string BachelorsComp { get; set; }
+        public string YearGraduatedBA { get; set; }
+        public string PlaceBA { get; set; }
+        public string MastersComp { get; set; }
+        public string YearGraduatedMST { get; set; }
+        public string PlaceMST { get; set; }
+        public string Employer { get; set; }
+        public string EmployedSince { get; set; }
+        public string CurrentCar { get; set; }
         public string FinalChoice { get; set; }
     
         public virtual ICollection<UserActivity> UserActivities { get; set; }
