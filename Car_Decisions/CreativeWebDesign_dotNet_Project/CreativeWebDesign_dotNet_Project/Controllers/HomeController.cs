@@ -11,7 +11,7 @@ using System.Data;
 using System.Configuration;
 using ClosedXML.Excel;
 using Newtonsoft.Json.Linq;
-//..
+//....
 
 
 
@@ -21,18 +21,17 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
     {
         [HttpGet]
         public ActionResult Index()
-        {//
+        {
 
             return View();
         }
 
         [HttpPost]
-        public ActionResult PostDemographics(string organization, string streetAddress, string state, string number,
-            string password, string role, string city, string zipCode, string email, string gender, string mariatalStatus, string age,
-            string occupation, string education, double timeOnLandingPage)
+        public ActionResult PostDemographics(string age, string sex, string job,string otherJob, string highschool, string yearGraduatedHS, 
+            string hsPlace, string bachelors, string yearGraduatedBach, string bachPlace, string mastersphd, string yearGraduatedMPHD,
+            string mstPlace, string Employer, string employerSince, string currentCar, string carOther, string timeOnLandingPage)
         {
-            //CreativeWebDesigndotNetProject_dbEntities db = new CreativeWebDesigndotNetProject_dbEntities();
-            CarDecision_DBEntities db = new CarDecision_DBEntities();
+            CarDecision_DBEntities1 db = new CarDecision_DBEntities1();
             UserRecord user = new UserRecord();
             //List<UserActivity> activities = user.UserActivities.Select(x => x).ToList<UserActivity>();
             
@@ -41,19 +40,21 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
             user.Id = uID;
             user.TimeLoggedIn = DateTime.Now;
             user.Age = age;
-            user.City = city;
-            user.Email = email;
-            user.Gender = gender;
-            user.MaritalStatus = mariatalStatus;
-            user.Occupation = occupation;
-            user.Organization = organization;
-            user.Password = password;
-            user.PhoneNumber = number;
-            user.RoleInOrganization = role;
-            user.State = state;
-            user.StreetAddress = streetAddress;
-            user.ZipCode = zipCode;
-            user.Education = education;
+            user.Sex = sex;
+            user.Job = job;
+            user.JobOther = otherJob;
+            user.HighSchool = highschool;
+            user.YearGraduatedHS = yearGraduatedHS;
+            user.PlaceHS = hsPlace;
+            user.BachelorsComp = bachelors;
+            user.YearGraduatedBA = yearGraduatedBach;
+            user.PlaceBA = bachPlace;
+            user.MastersComp = mastersphd;
+            user.PlaceMST = mstPlace;
+            user.Employer = Employer;
+            user.EmployedSince = employerSince;
+            user.CurrentCar = currentCar;
+            user.CarOther = carOther;
             //figure out time on landing page
             string[] split = timeOnLandingPage.ToString().Split('.');   
             string minutes = split[0];
@@ -67,11 +68,16 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
             user.TimeOnLandingPage = minutes + " min, " + seconds + " sec";
             db.UserRecords.Add(user);
             db.SaveChanges();
-
+        
            
-            return RedirectToAction("UserMatrix", new {userId = uID });
+            return RedirectToAction("CarVideo", new {userId = uID });
         }
 
+        public ActionResult CarVideo(string userID)
+        {
+            ViewBag.userID = userID;
+            return View();
+        }
         
         public ActionResult UserMatrix(string userId)
         {
@@ -86,7 +92,7 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
         {
             //CreativeWebDesigndotNetProject_dbEntities db = new CreativeWebDesigndotNetProject_dbEntities();
             //if (db.UserActivities.Where(x => x.UserId == userID).Count() == 0)
-            CarDecision_DBEntities db = new CarDecision_DBEntities();
+            CarDecision_DBEntities1 db = new CarDecision_DBEntities1();
                 JObject uaObj = JObject.Parse(userActivity);
                 string[] split = timeOnSurvey.ToString().Split('.');
                 string minutes = split[0];
@@ -187,8 +193,8 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
 
         public ActionResult DatabaseSpreadSheet()
         {
-            //CreativeWebDesigndotNetProject_dbEntities db = new CreativeWebDesigndotNetProject_dbEntities();
-            CarDecision_DBEntities db = new CarDecision_DBEntities();
+            
+            CarDecision_DBEntities1 db = new CarDecision_DBEntities1();
             /*Workbook workbook = new Workbook();
             Worksheet spreadSheet = new Worksheet("My worksheet");
             spreadSheet.Cells[0, 0] = new Cell("cell1");
@@ -211,65 +217,70 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                 //Add User Info to Excel Sheet
                 worksheet.Cell("A" + j.ToString()).Value = "User ID";
                 worksheet.Cell("A" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("B" + j.ToString()).Value = "Marital Status";
+                worksheet.Cell("B" + j.ToString()).Value = "Age";
                 worksheet.Cell("B" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("C" + j.ToString()).Value = "Occupation";
+                worksheet.Cell("C" + j.ToString()).Value = "Sex";
                 worksheet.Cell("C" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("D" + j.ToString()).Value = "Organization";
+                worksheet.Cell("D" + j.ToString()).Value = "Job";
                 worksheet.Cell("D" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("E" + j.ToString()).Value = "Password";
+                worksheet.Cell("E" + j.ToString()).Value = "JobOther";
                 worksheet.Cell("E" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("F" + j.ToString()).Value = "Phone Number";
+                worksheet.Cell("F" + j.ToString()).Value = "Highschool";
                 worksheet.Cell("F" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("G" + j.ToString()).Value = "Role In Organization";
+                worksheet.Cell("G" + j.ToString()).Value = "Year Graduated HS";
                 worksheet.Cell("G" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("H" + j.ToString()).Value = "State";
+                worksheet.Cell("H" + j.ToString()).Value = "Place of HS";
                 worksheet.Cell("H" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("I" + j.ToString()).Value = "Street Address";
+                worksheet.Cell("I" + j.ToString()).Value = "Bachelors";
                 worksheet.Cell("I" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("J" + j.ToString()).Value = "Time Logged In";
+                worksheet.Cell("J" + j.ToString()).Value = "Year Graduated BA";
                 worksheet.Cell("J" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("K" + j.ToString()).Value = "Time Logged Off";
+                worksheet.Cell("K" + j.ToString()).Value = "Bachelors Place";
                 worksheet.Cell("K" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("L" + j.ToString()).Value = "Time On Matrix";
-                worksheet.Cell("L" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("M" + j.ToString()).Value = "Time On Landing Page";
                 worksheet.Cell("M" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("N" + j.ToString()).Value = "Zip Code";
+                worksheet.Cell("N" + j.ToString()).Value = "Masters/PHD";
                 worksheet.Cell("N" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("O" + j.ToString()).Value = "Gender";
+                worksheet.Cell("O" + j.ToString()).Value = "Year Graduated MST";
                 worksheet.Cell("O" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("P" + j.ToString()).Value = "Email";
+                worksheet.Cell("P" + j.ToString()).Value = "Place of Masters";
                 worksheet.Cell("P" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("Q" + j.ToString()).Value = "Education";
+                worksheet.Cell("Q" + j.ToString()).Value = "Employer";
                 worksheet.Cell("Q" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("R" + j.ToString()).Value = "City";
+                worksheet.Cell("R" + j.ToString()).Value = "Employed Since";
                 worksheet.Cell("R" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("S" + j.ToString()).Value = "Age";
+                worksheet.Cell("S" + j.ToString()).Value = "Current Car";
                 worksheet.Cell("S" + j.ToString()).Style.Font.Bold = true;
-                worksheet.Cell("T" + j.ToString()).Value = "Final Choice";
+                worksheet.Cell("T" + j.ToString()).Value = "Current Car(Other)";
                 worksheet.Cell("T" + j.ToString()).Style.Font.Bold = true;
+                worksheet.Cell("U" + j.ToString()).Value = "Time On Matrix";
+                worksheet.Cell("U" + j.ToString()).Style.Font.Bold = true;
+                worksheet.Cell("V" + j.ToString()).Value = "Time On Landing Page";
+                worksheet.Cell("V" + j.ToString()).Style.Font.Bold = true;
+                worksheet.Cell("W" + j.ToString()).Value = "Final Choice";
+                worksheet.Cell("W" + j.ToString()).Style.Font.Bold = true;
                 j++;
 
                 worksheet.Cell("A" + j.ToString()).Value = userRecords[i].Id;
-                worksheet.Cell("B" + j.ToString()).Value = userRecords[i].MaritalStatus;
-                worksheet.Cell("C" + j.ToString()).Value = userRecords[i].Occupation;
-                worksheet.Cell("D" + j.ToString()).Value = userRecords[i].Organization;
-                worksheet.Cell("E" + j.ToString()).Value = userRecords[i].Password;
-                worksheet.Cell("F" + j.ToString()).Value = userRecords[i].PhoneNumber;
-                worksheet.Cell("G" + j.ToString()).Value = userRecords[i].RoleInOrganization;
-                worksheet.Cell("H" + j.ToString()).Value = userRecords[i].State;
-                worksheet.Cell("I" + j.ToString()).Value = userRecords[i].StreetAddress;
-                worksheet.Cell("J" + j.ToString()).Value = userRecords[i].TimeLoggedIn;
-                worksheet.Cell("K" + j.ToString()).Value = userRecords[i].TimeLoggedOff;
-                worksheet.Cell("L" + j.ToString()).Value = userRecords[i].TimeOnMatrix;
-                worksheet.Cell("M" + j.ToString()).Value = userRecords[i].TimeOnLandingPage;
-                worksheet.Cell("N" + j.ToString()).Value = userRecords[i].ZipCode;
-                worksheet.Cell("O" + j.ToString()).Value = userRecords[i].Gender;
-                worksheet.Cell("P" + j.ToString()).Value = userRecords[i].Email;
-                worksheet.Cell("Q" + j.ToString()).Value = userRecords[i].Education;
-                worksheet.Cell("R" + j.ToString()).Value = userRecords[i].City;
-                worksheet.Cell("S" + j.ToString()).Value = userRecords[i].Age;
+                worksheet.Cell("B" + j.ToString()).Value = userRecords[i].Age;
+                worksheet.Cell("C" + j.ToString()).Value = userRecords[i].Sex;
+                worksheet.Cell("D" + j.ToString()).Value = userRecords[i].Job;
+                worksheet.Cell("E" + j.ToString()).Value = userRecords[i].JobOther;
+                worksheet.Cell("F" + j.ToString()).Value = userRecords[i].HighSchool;
+                worksheet.Cell("G" + j.ToString()).Value = userRecords[i].YearGraduatedHS;
+                worksheet.Cell("H" + j.ToString()).Value = userRecords[i].PlaceHS;
+                worksheet.Cell("I" + j.ToString()).Value = userRecords[i].BachelorsComp;
+                worksheet.Cell("J" + j.ToString()).Value = userRecords[i].YearGraduatedBA;
+                worksheet.Cell("K" + j.ToString()).Value = userRecords[i].PlaceBA;
+                worksheet.Cell("N" + j.ToString()).Value = userRecords[i].MastersComp;
+                worksheet.Cell("O" + j.ToString()).Value = userRecords[i].YearGraduatedMST;
+                worksheet.Cell("P" + j.ToString()).Value = userRecords[i].PlaceMST;
+                worksheet.Cell("Q" + j.ToString()).Value = userRecords[i].Employer;
+                worksheet.Cell("R" + j.ToString()).Value = userRecords[i].EmployedSince;
+                worksheet.Cell("S" + j.ToString()).Value = userRecords[i].CurrentCar;
+                worksheet.Cell("T" + j.ToString()).Value = userRecords[i].CarOther;
+                worksheet.Cell("U" + j.ToString()).Value = userRecords[i].TimeOnMatrix;
+                worksheet.Cell("V" + j.ToString()).Value = userRecords[i].TimeOnLandingPage;
+                worksheet.Cell("W" + j.ToString()).Value = userRecords[i].FinalChoice;
                 try
                 {
                     if (userRecords[i].FinalChoice.Trim() == "")

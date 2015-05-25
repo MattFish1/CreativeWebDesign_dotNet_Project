@@ -1,0 +1,42 @@
+﻿body {
+    background-color:red;
+    color:white;
+    padding:50px;
+    padding-top:30px;
+}
+
+h2{
+    font-size:26px;
+}
+input[type=text]{
+    width:110px;
+}
+.formLabel{
+   height: 15px;
+width: 95px;
+    background-color: #000;
+    padding: 5px;
+    /*display:inline; float:left;
+    display:inline; 
+        float:left;*/
+    border: 3px solid lightgrey;
+}
+
+.radioFormLabel{
+    height: 15px;
+width: 95++++++++++++++px;
+    background-color: #000;
+    padding: 5px;
+    /*display:inline; float:left;*/
+    border: 3px solid lightgrey;
+   
+}
+
+.radioBox{
+    /*display:inline; 
+    float:left;*/
+}
+
+#thisDiv{
+    margin-left:50px !important;
+}

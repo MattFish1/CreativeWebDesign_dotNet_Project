@@ -1,193 +1,320 @@
 ﻿
 @{
-    ViewBag.Title = "Demographics";
+    ViewBag.title = "Cardecision";
 }
 
-<link href="~/Style/demographics.css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 992px) and (max-width: 1199px)" href="~/Style/dm-md-screen.css" />
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 780px) and (max-width: 991px)" href="~/Style/dm-sm-screen.css" />
-<link rel="stylesheet" type="text/css" media="screen and (max-width: 779px)" href="~/Style/dm-xs-screen.css" />
 
-<script type="text/javascript" src="~/Js/landingPage.js"></script>
+	
+    
+    
+		<!---<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />-->
+		<!--  [if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="~/Js/jquery.min.js"></script>
+		<script src="~/Js/jquery.scrolly.min.js"></script>
+		<script src="~/Js/skel.min.js"></script>
+		<script src="~/Js/init.js"></script>
+		<script src="~/Js/landingPage.js"></script>
+			<link rel="stylesheet" href="~/Style/skel.css" />
+			<link rel="stylesheet" href="~/Style/style.css" />
+			<link rel="stylesheet" href="~/Style/style-desktop.css" />
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		
+        <!-- Nav -->
+			<!--<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>-->
 
-<h2>Demographics</h2>
+		<!-- Home -->
+<div style="color:black">
+			<div style="height:1000px" class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u">
+							<span class="image fit"><img src="~/Style/images/cars.jpg" alt="" /></span>
+						</div>
+						<div class="8u">
+							<header>
+                                <h1 style="font-size:50px"><strong>Car Decisions</strong></h1>
+							</header>
+                            <br /><br />
+                            <p style="font-size: 1.5em">Please fill out the following form.</p>
+							<a style="font-size: 1.5em; padding: 1em 2.35em;" href="#contact" class="button big scrolly">Proceed</a>
+						</div>
+					</div>
+					<br><br><br><br>
+				</article>
+			</div>
 
-    <form id="demographicsForm" method="post" action="@Url.Action("PostDemographics", "Home")">
-        <div style=  "float:left; display:inline;">
-           <!-- <p  class="formLabel">
-                User Id
-            </p>
-            <p class="inputBox">
-                <input type="text" name="userId" />
-            </p>
-            <br />-->
-        
-            <p class="formLabel">
-                Organization
-            </p>
-            <p class="inputBox">
-                <input type="text" name="organization" />
-            </p>
-            <br />
-
-            <p class="formLabel">
-                Street Address
-            </p>
-            <p class="inputBox">
-                <input type="text" name="streetAddress" />
-            </p>
-            <br />
-            <p class="formLabel">
-                State
-            </p>
-            <p class="inputBox">
-                <input type="text" name="state" />
-            </p>
-            <br />
-            <p class="formLabel">
-                Phone Number
-            </p>
-            <p class="inputBox">
-                <input type="text" name="number" />
-            </p>
-            <br />
-
-            <p class="formLabel">
-                Zip Code
-            </p>
-            <p class="inputBox">
-                <input type="text" name="zipCode" />
-            </p>
-            <br />
-        </div>
-
-        <div style="display:inline; float:left; margin-left:100px">
-            <p class="formLabel">
-                Password
-            </p>
-            <p class="inputBox">
-                <input type="text" name="password" />
-            </p>
-            <br />
-            <p class="formLabel">
-                Role In Org
-            </p>
-            <p class="inputBox">
-                <input type="text" name="role" />
-            </p>
-            <br />
-       
-            <p class="formLabel">
-                City
-            </p>
-            <p class="inputBox">
-                <input type="text" name="city" />
-            </p>
-            <br />
-            
-            <p class="formLabel">
-                Email
-            </p>
-            <p class="inputBox">
-                <input type="text" name="email" />
-            </p>
-            <br />
-        </div>
-
-        <div style="display:inline; float:left; margin-left:100px">
-                <p class="radioFormLabel">
-                    Gender
-                </p>
-                <p class="radioBox">
-                    <input style="display:inline" type="radio" name="gender" value="male"> Male
-                    <br />
-                    <input style="display:inline" type="radio" name="gender" value="female"> Female
-                </p>
-                <br />
-
-                <p class="radioFormLabel">
-                    Marital Status
-                </p>
-                <p class="radioBox" >
-                    <input style="display:inline" type="radio" name="mariatalStatus" value="married"> Married
-                    <br />
-                    <input style="display:inline" type="radio" name="mariatalStatus" value="divorced/seporated"> Divorced or Seporated
-                    <br />     
-                    <input style="display:inline" type="radio" name="mariatalStatus" value="single"> Single Never Married
-                    <br />
-                    <input style="display:inline" type="radio" name="mariatalStatus" value="widowed"> Widowed
-                </p>
-                <br />
-
-               
-                <p class="radioFormLabel" style="">
-                    Education
-                </p>
-                <div class="radioBox">
-                    <input style="display:inline" type="radio" name="education" value="highschool"> Graduated Highschool
-                    <br />
-                    <input style="display:inline" type="radio" name="education" value="college1-3"> 1-3 Years of College
-                    <br />
-                    <input style="display:inline" type="radio" name="education" value="graduatedCollege"> Graduated College(4 Years)
-                    <br />
-                    <input style="display:inline" type="radio" name="education" value="gradSchool"> Grad School
-                    <br />
-                </div>
-           </div>
-
-        <div id="thisDiv" style="display:inline; float:left; margin-left:100px">
-            <p class="radioFormLabel" style="">
-                Age
-            </p>
-            <div class="radioBox">
-                <input style="display:inline" type="radio" name="age" value="14-17"> 14 to 17
-                <br />
-                <input style="display:inline" type="radio" name="age" value="18-24"> 18 to 24
-                <br />
-                <input style="display:inline" type="radio" name="age" value="25-34"> 25 to 34
-                <br />
-                <input style="display:inline" type="radio" name="age" value="35-44"> 35 to 44
-                <br />
-                <input style="display:inline" type="radio" name="age" value="55-64"> 55 to 64
-                <br />
-                <input style="display:inline" type="radio" name="age" value="65+"> 65+
-            </div>
-            <br />
-
-            <p class="radioFormLabel" style="">
-                Occupation
-            </p>
-            <div class="radioBox">
-                <input style="display:inline" type="radio" name="occupation" value="prof/mgmt"> Professional/Managerial
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="service"> Clerical or Service Person
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="laborer"> Laborer
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="unemployed"> Unemployed
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="salesman"> Salesman
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="student"> Student
-                <br />
-                <input style="display:inline" type="radio" name="occupation" value="military"> Military
-                <br />
-                <div id="proceed" style="cursor: pointer;height: 30px;width: 60px;display: inline;float: left;
-                     padding: 5px; padding-bottom: 0px;
-                     background-color: #000; margin-top: 50px;
-                     margin-bottom: 40px; background-color:black;
-                     padding-left: 8px; padding-top: 5px;">
-                    Proceed
-                </div>
-               
-                
-            </div>
-            <input id="timeOnPage" name="timeOnLandingPage" type="hidden" />
-        </div>
-        <!--<input type="submit" value="Proceed"/>-->      
-</form>
+	
+    <span id="contact" class=""></span>
+		<!-- Contact -->
+	<div class="wrapper style2">
+		
+			<header>
+              <br /><br />
+			 <h2 align="center" style="font-size: 36px;">Please fill out the following form to proceed to the next step.</h2> 
+			
+			</header>
+        <br /><br />
+			<div>
+				
+				<div class="row">
+					<div class="12u">
+						<form id="demographicsForm" method="post" action="@Url.Action("PostDemographics", "Home")">
 
 
+						      <!--<div style= "float:left; display:inline; width: 216px;">-->
+
+                                    <div align="center" style="margin-left:auto; margin-right:auto; width: 630px;">
+                                        
+                                            <div style="display:inline; float:left; margin-right:25px">
+                                                <p class="radioFormLabel" style="">
+                                                    Age
+                                                </p>
+                                                <div class="inputBox">
+                                                    <input type="text"  name="age">
+                                                        
+                                                    </div>
+                                                </div>
+                                            
+                                            <div style="display:inline; float:left">
+                                               <p class="radioFormLabel">
+                                                    Sex
+                                                </p>
+                                                <p class="radioBox">
+                                                    <input type="text"  name="sex">
+                                                </p>
+                                            </div>
+                                        
+                                        <div style="height: 150px;"></div>
+
+                                        <div style="display:inline; float:left; margin-right:25px">
+                                            <p class="radioFormLabel" style="">
+                                                Job
+                                            </p>
+                                            <div class="radioBox">
+                                                <select class="inputBox" name="job">
+                                                    <option value="">
+                                                        -Select Option
+                                                    </option>
+                                                    <option value="prof/mgmt"> Professional/Managerial
+                                                    </option>
+                                                    <option value="service">
+                                                        Clerical or Service Person
+                                                    </option>
+                                                    <option value="laborer">
+                                                        Laborer
+                                                    </option>
+                                                    <option value="unemployed">
+                                                        Unemployed
+                                                    </option>
+                                                    <option value="salesman">
+                                                        Salesman
+                                                    </option>
+                                                    <option value="student">
+                                                        Student
+                                                    </option>
+                                                    <option value="military">
+                                                        Military
+                                                    </option>
+                                                    <option value="other">
+                                                        Other
+                                                    </option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                                
+                                            <div style="display:inline; float:left">
+                                                <p class="formLabel">
+                                                    If "Other" Please Specify
+                                                </p>
+                                                
+                                                <p class="inputBox">
+                                                    <input type="text" name="otherJob" />
+                                                </p>
+                                                
+                                            </div>
+                                            <div style="height: 170px;"></div>
+                                        
+                                            <div style="display:inline; float:left; margin-right:25px">
+                                                <p class="formLabel">
+                                                    Highschool
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="highschool" />
+                                                </p>
+                                            </div>
+
+                                            <div style="display:inline; float:left; margin-right:25px">
+                                                <p class="formLabel">
+                                                    Year of Graduation
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="yearGraduatedHS" />
+                                                </p>
+                                            </div>
+
+                                            <div style="display:inline; float:left;">
+                                                <p class="formLabel">
+                                                    Place
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="hsPlace" />
+                                                </p>
+                                            </div>
+
+                                            <div style="height: 150px;"></div>
+                                        
+                                            <div style="display:inline; float:left; margin-right:25px"> 
+                                                <p class="formLabel">
+                                                    Bachelor's Completed
+                                                </p>
+                                                <select name="bachelors" class="inputBox">
+                                                    <option value="yes"> Yes</option>
+                                                    <option value="no"> No</option>
+                                                </select>
+                                                
+                                            </div>
+                                            <div style="display:inline; float:left; margin-right:25px">
+                                           		<p class="formLabel">
+                                                    Year Of Graduation
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="yearGraduatedBach" />
+                                                </p>
+                                            </div>
+
+                                            <div style="display:inline; float:left;">
+                                                <p class="formLabel">
+                                                    Place
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="bachPlace" />
+                                                </p>
+                                            </div>
 
 
-<br />
+
+                                        <div style="height: 150px;"></div>
+                                        
+                                        <div style="display:inline; float:left; margin-right:25px">
+                                        	<p class="formLabel">
+                                                Masters/PHD Completed
+                                            </p>
+                                            <select name="masters/phd" class="inputBox">
+                                                <option value="yes"> Yes</option>
+                                                <option value="no"> No</option>
+                                            </select>
+                                        </div> 
+                                        <div style="display:inline; float:left; margin-right:25px">
+                                            <p class="formLabel">
+                                                Year Of Graduation
+                                            </p>
+                                            <p class="inputBox">
+                                                <input type="text" name="yearGraduatedM/PHD" />
+                                            </p>
+                                        </div>  
+
+                                        <div style="display:inline; float:left;">
+                                                <p class="formLabel">
+                                                    Place
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="mstPlace" />
+                                                </p>
+                                            </div>
+
+                                        <div style="height: 150px;"></div>
+                                        
+                                        <div style="display:inline; float:left; margin-right:25px">
+                                               
+                                            <p class="radioFormLabel" style="">
+                                                Employer
+                                            </p>
+                                            <p class="inputBox">
+                                                <input type="text" name="Employer">
+                                                </p>  
+                                            </p>
+                                        </div>
+                                        <div style="display:inline; float:left;">
+                                            <p class="radioFormLabel" style="">
+                                                Since
+                                            </p>
+                                            <p class="inputBox">
+                                                <input type="text" name="employerSince">
+                                                </p>  
+                                            </p>
+                                        </div>
+
+                                        <div style="height: 150px;"></div>
+                                        
+                                            <div style="display:inline; float:left;">
+
+                                            <p class="radioFormLabel" style="">
+                                            Current Car
+                                            </p>
+                                            <div class="radioBox">
+                                                <select name="currentCar">
+                                                    <option value="">
+                                                        -Select Option
+                                                    </option>
+                                                    <option value="honda">
+                                                        Honda
+                                                    </option>
+                                                    <option value="Toyota">
+                                                        Toyota
+                                                    </option>
+                                                    <option value="Mazda">
+                                                        Mazda
+                                                    </option>
+                                                    <option value="Ford">
+                                                        Ford
+                                                    </option>
+                                                    <option value="Chrysler">
+                                                        Chrysler
+                                                    </option>
+                                                    <option value="Mercedes">
+                                                        Mercedes
+                                                    </option>
+                                                    <option value="bmw">
+                                                        BMW
+                                                    </option>
+                                                    <option value="Dodge">
+                                                        Dodge
+                                                    </option>
+                                                    <option value="other">
+                                                        Other
+                                                    </option>
+                                                   
+                                                </select>
+                                            </div>
+                                                <input type="hidden" id="timeOnPage" value="timeOnLandingPage" />
+                                            <span id="proceed" value="Proceed" type="submit"  class="button big scrolly" style="margin-top: 100px; font-size: 1.1em; padding: 1em 2.35em;">
+                                                Proceed
+                                            </span>
+                                              
+                                          </div>
+
+
+                                    </div>
+                                            <input id="timeOnPage" name="timeOnLandingPage" type="hidden" />
+                                       
+                                        <!--<input type="submit" value="Proceed"/>-->      
+                                </form>
+							</div>
+						</div>
+						
+					</div>
+					
+						
+			</div>
+</div>

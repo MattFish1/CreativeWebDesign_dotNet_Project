@@ -278,6 +278,8 @@
       <DependentUpon>Db_model12.edmx</DependentUpon>
       <LastGenOutput>Db_model12.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\cardecisionsbeta.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionssite.pubxml" />
     <None Include="Properties\PublishProfiles\CreativeWebDesigndotNetProject.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -350,6 +352,7 @@
     <Content Include="Content\Images\Thumbs.db" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\FinishedSurvey.cshtml" />
+    <Content Include="Views\Home\CarVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

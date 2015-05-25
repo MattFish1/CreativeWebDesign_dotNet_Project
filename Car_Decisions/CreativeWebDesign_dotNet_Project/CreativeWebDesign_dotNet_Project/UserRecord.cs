@@ -42,6 +42,7 @@ namespace CreativeWebDesign_dotNet_Project
         public string EmployedSince { get; set; }
         public string CurrentCar { get; set; }
         public string FinalChoice { get; set; }
+        public string CarOther { get; set; }
     
         public virtual ICollection<UserActivity> UserActivities { get; set; }
     }
