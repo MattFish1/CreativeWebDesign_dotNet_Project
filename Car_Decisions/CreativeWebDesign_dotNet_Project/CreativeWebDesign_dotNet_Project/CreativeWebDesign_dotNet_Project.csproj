@@ -330,6 +330,9 @@
     <Content Include="Content\Images\qmLargeFont.jpg" />
     <Content Include="Content\Images\qm_big.jpg" />
     <Content Include="Content\Images\slider.jpg" />
+    <None Include="Views\Home\Matrix5x7.cshtml" />
+    <None Include="Views\Home\Matrix6x6.cshtml" />
+    <None Include="Views\Home\Matrix8x4.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

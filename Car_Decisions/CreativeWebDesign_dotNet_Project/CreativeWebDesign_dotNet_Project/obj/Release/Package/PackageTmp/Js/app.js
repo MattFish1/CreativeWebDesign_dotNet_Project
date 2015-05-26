@@ -358,7 +358,7 @@ app.controller('mainController', ['$scope', function($scope){
 	        data: { userActivity: uaString, userID: uID, timeOnSurvey: timeOnSite, finalChoice: finalChoice},
 	        success: function () {
 	            
-	            window.location = "http://cardecisionsbeta.azurewebsites.net/home/finishedsurvey";
+	            window.location = "http://cardecisionssite.azurewebsites.net/home/finishedsurvey";
 	            
 	        },
 	        error: function() {

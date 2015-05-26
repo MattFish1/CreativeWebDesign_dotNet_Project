@@ -85,6 +85,24 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
             return View();
         }
 
+        public ActionResult Matrix5x7(string userId)
+        {
+            ViewBag.userId = userId;
+            return View();
+        }
+
+        public ActionResult Matrix8x4(string userId)
+        {
+            ViewBag.userId = userId;
+            return View();
+        }
+
+        public ActionResult Matrix6x6(string userId)
+        {
+            ViewBag.userId = userId;
+            return View();
+        }
+
         
 
         [HttpPost]

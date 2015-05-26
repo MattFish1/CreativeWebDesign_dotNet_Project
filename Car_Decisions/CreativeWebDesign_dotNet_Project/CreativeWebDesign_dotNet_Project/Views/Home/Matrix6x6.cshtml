@@ -1,0 +1,474 @@
+﻿@{
+    ViewBag.Title = "User Matrix";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Style/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="~/Style/bootstrap.modaldrawer.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 1200px)" href="~/Style/userMatrix.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 992px) and (max-width: 1199px)" href="~/Style/ua-md-screen.css" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 780px) and (max-width: 991px)" href="~/Style/ua-sm-screen.css" />
+<link rel="stylesheet" type="text/css" media="screen and (max-width: 779px)" href="~/Style/ua-xs-screen.css" />
+<link rel="stylesheet" type="text/css" href="~/Style/radioButton.css" />
+
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="~/Js/modernizr.js"></script>
+<script type="text/javascript" src="~/Js/jquery.browser.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<!---<script type="text/javascript" src="~/Js/angular.min.js"></script>-->
+<script src="https://code.angularjs.org/1.3.14/angular-sanitize.js"></script>
+<script type="text/javascript" src="~/Js/app.js"></script>
+
+<body ng-app="app" ng-controller="mainController">
+    
+    
+    <!-- Start your code here-->
+    
+    <div id="filter"></div>
+    <div align="center">
+        <h3 id="title" style="color:black"><u>Sample Decision Matrix: Purchasing a car</u></h3>
+    </div>
+    <p id="font" style="text-align: center; color:black">Recently married, having spousal talks about starting a family as soon as possible. In the market for a new car, contemplating between potential familial needs, style, finance and safety.</p>
+    <br /></br> </br>
+
+    <!--popup windows-->
+    <!--Top-->
+
+
+
+
+
+
+    <table class="tg">
+        <tbody class="us-help-area">
+            <tr>
+
+                <th class="tg-ts7t cat" style="background-image: url('Images/blueWLine2.jpg');" data-window="pacW" style="border-bottom:4px solid lightgray; border-top: 4px solid lightgrey; border-left: 4px solid lightgrey; border-right:4px solid lightgray;">
+                    <!--<div class="pw" id="pacW" style="top:25px; ">
+                        <div class="pwTopArrowBorder">	</div>
+                        <div class="pwTopArrow"></div>
+                        <p style="color:black">Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubili,et.</p>
+                    </div>-->
+                    <p style="margin-left: 20px;">Options</p>
+                    <p style="margin-right: 50px;">Critiria</p>
+
+                </th>
+
+
+                
+
+                <th class="tg-031e cat" data-window="category1" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid lightgray;">
+                    <div class="pw" id="category1" style="top:25px;">
+                        <div class="pwTopArrowBorder">	</div>
+                        <div class="pwTopArrow"></div>
+                        <p>Feugiat sapien est, facilisis Tellus curae; cubilia. Libero et justo fames netus scelerisque lorem magna imperdiet laoreet conubia.</p>
+                    </div>
+                    <p>Category</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="category2" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                    <div class="pw" id="category2" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Category</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="category3" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                    <div class="pw" id="weightsW" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Category</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="category4" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                    <div class="pw" id="category4" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Category</p>
+                </th>
+
+                <th class="tg-031e cat" data-window="category5" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                    <div class="pw" id="category5" style="top:25px;">
+                        <div class="pwTopArrowBorder"></div>
+                        <div class="pwTopArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Weights</p>
+                </th>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="Alternative1" style="border-right: 4px solid black; border-left: 4px solid lightgrey;">
+                    <div class="pwLeft" id="aycW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Alternative</p>
+                </th>
+                
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat1_alt1" ng-src="{{infoImage}}" data-slider="s1" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat2_alt1" ng-src="{{infoImage}}" data-slider="s2" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat3_alt1" ng-src="{{infoImage}}" data-slider="s3" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+                
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat4_alt1" ng-src="{{infoImage}}" data-slider="s4" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                    <output for="fader"  ng-bind="val4" id="volume4">0</output>
+                    <span ng-click="val4 = sliderMinus(val4)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val4" step="1" type="range" value="0">
+
+                    <span ng-click="val4 = sliderPlus(val4)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            
+
+           <tr>
+                <th class="tg-fo3p cat" data-window="Alternative4" style="border-right: 4px solid black; border-left: 4px solid lightgrey;">
+                    <div class="pwLeft" id="Alternative5" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Alternative</p>
+                </th>
+                
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat1_alt2" ng-src="{{infoImage}}" data-slider="s5" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat2_alt2" ng-src="{{infoImage}}" data-slider="s6" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat3_alt2" ng-src="{{infoImage}}" data-slider="s7" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+                
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat4_alt2" ng-src="{{infoImage}}" data-slider="s8" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                    <output for="fader"  ng-bind="val8" id="volume8">0</output>
+                    <span ng-click="val8 = sliderMinus(val8)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val8" step="1" type="range" value="0">
+
+                    <span ng-click="val8 = sliderPlus(val8)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="Alternative5" style="border-right: 4px solid black; border-left: 4px solid lightgrey;">
+                    <div class="pwLeft" id="Alternative5" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Alternative</p>
+                </th>
+                
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat1_alt3" ng-src="{{infoImage}}" data-slider="s8" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat2_alt3" ng-src="{{infoImage}}" data-slider="s9" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat3_alt3" ng-src="{{infoImage}}" data-slider="s10" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+                
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat4_alt3" ng-src="{{infoImage}}" data-slider="s11" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                    <output for="fader"  ng-bind="val12" id="volume12">0</output>
+                    <span ng-click="val12 = sliderMinus(val12)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val12" step="1" type="range" value="0">
+
+                    <span ng-click="val12 = sliderPlus(val12)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="tg-fo3p cat" data-window="Alternative6" style="border-right: 4px solid black; border-left: 4px solid lightgrey;">
+                    <div class="pwLeft" id="Alternative6" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Alternative</p>
+                </th>
+                
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat1_alt4" ng-src="{{infoImage}}" data-slider="s12" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat2_alt4" ng-src="{{infoImage}}" data-slider="s13" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat3_alt4" ng-src="{{infoImage}}" data-slider="s14" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+                
+                <td class="tg-031e">
+
+                    <div class="wrapper">
+                        <img data-window="cat4_alt4" ng-src="{{infoImage}}" data-slider="s15" class="info"
+                             data-info="<ul><li>Based on AAAs cost analysis which factors in gas consumption, maintenance, depreciation, insurance, etc., per 15,000 miles, the average North American minivan costs $11,599, or 77.3 cents a mile. <div class='ssLink' data-window='ssExample3' data-ss='3' data-link='examplelink3.com' style='display:inline'>example3</div> </li></ul>"
+                            data-help="Neutra tofu typewriter asymmetrical, try-hard tilde McSweeney's migas. Pickled disrupt banh mi, sustainable fap hoodie farm-to-table chia meh health goth PBR ">
+                        </img>
+                    </div>
+                </td>
+
+                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                    <output for="fader"  ng-bind="val1" id="volume1">0</output>
+                    <span ng-click="val1 = sliderMinus(val1)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
+                    <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val1" step="1" type="range" value="0">
+
+                    <span ng-click="val1 = sliderPlus(val1)"><img class="rangeButton" ng-src="{{plusImage}}"></span>
+                </td>
+            </tr>
+
+            <tr style="border: 4px solid #D6D6D6;">
+                <th class="tg-fo3p cat" data-window="choiceW">
+                    <div class="pwLeft" id="choiceW" style="">
+                        <div class="pwLeftArrowBorder"></div>
+                        <div class="pwLeftArrow"></div>
+                        <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
+                    </div>
+                    <p>Choice</p>
+                </th>
+
+              
+
+                <td value="minivan" class="tg-031e" align="center">
+                    <input data-value="category1" id="cat1CheckBox" data-id="catCheckBox" name="radAnswer3" type="checkbox" checked="false">
+                    <label for="cat1CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td value="minivan" class="tg-031e" align="center">
+                    <input data-value="category2" id="cat2CheckBox" data-id="cat2CheckBox" name="radAnswer3" type="checkbox" checked="false">
+                    <label for="cat2CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td  class="tg-031e" align="center">
+                    <input data-value="category3" id="cat3CheckBox" data-id="cat3CheckBox" name="radAnswer3" type="checkbox" checked="false">
+                    <label for="cat3CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+
+                <td  class="tg-031e" align="center">
+                    <input data-value="category4" id="cat4CheckBox" data-id="cat4CheckBox" name="radAnswer3" type="checkbox" checked="false">
+                    <label for="cat4CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
+                </td>
+                <td style="background:#D6D6D6;"></td>
+                
+                
+
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Modal-->
+
+    <div style="position: fixed; width: 100%; top: 100px" align="center">
+        <div id="modal" style="display:none; width: 500px; background-color: white; border: 2px solid white; border-radius: 7px;">
+            <div class="modal-header" align="center">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+                <h3>Info</h3>
+            </div>
+
+            <div id="infoWindow">
+
+
+                <div id="modalContent">
+                    <!--<p style="display:inline">superscript link
+                        <div class="sW" data-window="ssExample" style="display:inline">
+                            <sup >example</sup>
+                            <div style="transform: translate(-85px, -37px);" class="ssPW" id="ssExample" style="">
+                                <div class="ssArrowBorder"></div>
+                                <div class="ssArrow" ></div>
+                                <a target="blank" href="blank">examplelink.com</a>
+                            </div>
+
+                        </div>
+                    </p>-->
+                    <p id="modalInfo"></p>
+
+                    <!--<p ng-bind-html="modalContent"></p>-->
+                    <br><br>
+                    <output for="fader10" id="modalOutput" ng-bind="sliderValues[currentSlider]">0</output>
+                    <div id="modalInput">
+                        <span id="modalSlider" ng-click="sliderValues[currentSlider] = sliderMinus(sliderValues[currentSlider])"><img class="rangeButton" height="20px" width="20px" ng-src="{{minusImage}}"></span>
+                        <input class="range" id="fader10" data-id="" style="display:inline" max="10" min="0" step="1" type="range" ng-model="sliderValues[currentSlider]">
+
+                        <span ng-click="sliderValues[currentSlider] = sliderPlus(sliderValues[currentSlider])"> <img class="rangeButton" height="20px" width="20px" ng-src="{{plusImage}}"></span>
+
+
+                    </div>
+                    <br>
+
+
+                </div>
+            </div>
+
+            <div id="helpWindow" style="display:none">
+
+                <p>Lourem Ipsum Lourem Ipsum</p>
+            </div>
+            <br>
+
+
+            <div class="modal-footer">
+                <div class="pull-left">
+
+                    <!--<img id="helpButton" class="rangeButton" src="Images/qm_big.jpg">
+                    <button style="display:none" id="backButton" class="btn">Back</button>-->
+                    <!--<div class="us-help-area" style="cursor:pointer;">-->
+                    <div id="helpButton">
+
+                        <img style="height:18px" class="us-help-icon rangeButton" src="~/Images/qmLargeFont.jpg">
+                        <span id="qm" style="color: #FFF;position: absolute; -webkit-transform: translate(-14px, 2px); transform: translate(-14px, 2px); font-size: 15px; font-weight: bold;">?</span>
+                    </div>
+
+                    <div class="pwBottom" id="helpW" style="text-align:left; -webkit-transform: translate(-82px,22px); transform: translate(-82px,22px);">
+                        <div class="pwBottomArrowBorder"></div>
+                        <div class="pwBottomArrow"></div>
+                        <p style="color:black">Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum Lourem ipsum louremp ipsum</p>
+
+
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button id="closeButton" class="btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span name="userID" id="userID" data-value="@ViewBag.userId"></span>
+    <form id="sendUA" action="@Url.Action("PostUserMatrix", "Home")" style="cursor:pointer">
+        <div align="center">
+        <p style="background-color: rgb(37, 117, 230); width: 90px; color: white; border: 4px solid rgb(211, 211, 211); padding: 4px; margin-top: 40px;">END SURVEY</p>
+        </div>
+    </form>
+    <!----<footer style="bottom:0; position:absolute;">
+        <div style="padding-left:15px;"><p>Built by <a href="http://christopherfisher.azurewebsites.net" style="color:turqoise">Christopher Fisher</p></div>
+    </footer>-->
+    
+</body>

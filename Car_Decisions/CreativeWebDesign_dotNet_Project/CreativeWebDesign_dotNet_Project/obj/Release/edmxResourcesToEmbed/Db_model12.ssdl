@@ -38,9 +38,10 @@
     <Property Name="Employer" Type="nvarchar" MaxLength="500" />
     <Property Name="EmployedSince" Type="nvarchar" MaxLength="500" />
     <Property Name="CurrentCar" Type="nvarchar" MaxLength="500" />
+    <Property Name="CarOther" Type="nvarchar" MaxLength="500" />
     <Property Name="FinalChoice" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__UserActiv__UserI__36B12243">
+  <Association Name="FK__UserActiv__UserI__49C3F6B7">
     <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />
     <End Role="UserActivity" Type="Self.UserActivity" Multiplicity="*" />
     <ReferentialConstraint>
@@ -55,7 +56,7 @@
   <EntityContainer Name="CarDecision_DBModelStoreContainer">
     <EntitySet Name="UserActivity" EntityType="Self.UserActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRecords" EntityType="Self.UserRecords" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__UserActiv__UserI__36B12243" Association="Self.FK__UserActiv__UserI__36B12243">
+    <AssociationSet Name="FK__UserActiv__UserI__49C3F6B7" Association="Self.FK__UserActiv__UserI__49C3F6B7">
       <End Role="UserRecords" EntitySet="UserRecords" />
       <End Role="UserActivity" EntitySet="UserActivity" />
     </AssociationSet>

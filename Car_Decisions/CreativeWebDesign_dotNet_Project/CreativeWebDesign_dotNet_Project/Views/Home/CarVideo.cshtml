@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "CarVideo";
+}
+
+<script src="~/Js/jquery.min.js"></script>
+<script src="~/Js/jquery.scrolly.min.js"></script>
+<script src="~/Js/skel.min.js"></script>
+<script src="~/Js/init.js"></script>
+<script type="text/javascript" src="~/Js/carVideo.js"></script>
+<link rel="stylesheet" href="~/Style/skel.css" />
+<link rel="stylesheet" href="~/Style/style.css" />
+<link rel="stylesheet" href="~/Style/style-desktop.css" />
+
+<div align="center" style="margin-top:100px; font-size:20px">
+    <div id="startVideo">
+        You will now watch a video.
+        <br><br>
+        <button onclick="loadVideo()" class="button big scrolly" style=" font-size: 1.1em; padding: 1em 2.35em;">
+
+            Proceed
+        </button>
+    </div>
+
+    <div id="player"></div>
+
+    <div style="display:none" id="videoCompleted">
+        You will now be asked to fill out a decision matrix.
+        <br><br>
+        <form action="@Url.Action("UserMatrix", "Home")">
+            <input type="hidden" name="userID" value="@ViewBag.userId" />
+            <input value="Proceed" type="submit" class="button big scrolly" style=" font-size: 1.1em; padding: 1em 2.35em;">
+            
+        </form>
+    </div>
+    </div>
+

@@ -87,13 +87,23 @@
                                                 </div>
                                             
                                             <div style="display:inline; float:left">
-                                               <p class="radioFormLabel">
+                                                <p class="radioFormLabel">
                                                     Sex
                                                 </p>
-                                                <p class="radioBox">
-                                                    <input type="text"  name="sex">
-                                                </p>
-                                            </div>
+                                                <div class="radioBox">
+                                                    <select class="inputBox">
+                                                        <option value="notSpecified">
+                                                            -Select Option
+                                                        </option>
+                                                        <option value="Male">
+                                                            Male
+                                                        </option>
+                                                        <option value="Female">
+                                                            Female
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                </div>
                                         
                                         <div style="height: 150px;"></div>
 
@@ -103,7 +113,7 @@
                                             </p>
                                             <div class="radioBox">
                                                 <select class="inputBox" name="job">
-                                                    <option value="">
+                                                    <option value="notSpecified">
                                                         -Select Option
                                                     </option>
                                                     <option value="prof/mgmt"> Professional/Managerial
@@ -179,6 +189,9 @@
                                                     Bachelor's Completed
                                                 </p>
                                                 <select name="bachelors" class="inputBox">
+                                                    <option value="notSpecified">
+                                                        -Select Option
+                                                    </option>
                                                     <option value="yes"> Yes</option>
                                                     <option value="no"> No</option>
                                                 </select>
@@ -211,6 +224,10 @@
                                                 Masters/PHD Completed
                                             </p>
                                             <select name="masters/phd" class="inputBox">
+                                                <option value="notSpecified">
+                                                    -Select Option
+                                                </option>
+                                                <option value="not"> Yes</option>
                                                 <option value="yes"> Yes</option>
                                                 <option value="no"> No</option>
                                             </select>
@@ -257,14 +274,14 @@
 
                                         <div style="height: 150px;"></div>
                                         
-                                            <div style="display:inline; float:left;">
+                                           <div style="display:inline; float:left; margin-right:25px">
 
                                             <p class="radioFormLabel" style="">
                                             Current Car
                                             </p>
                                             <div class="radioBox">
                                                 <select name="currentCar">
-                                                    <option value="">
+                                                    <option value="notSpecified">
                                                         -Select Option
                                                     </option>
                                                     <option value="honda">
@@ -297,6 +314,18 @@
                                                    
                                                 </select>
                                             </div>
+                                               </div>
+
+                                            <div style="display:inline; float:left;">
+                                                <p class="radioFormLabel" style="">
+                                                    If "Other" Specify
+                                                </p>
+                                                <p class="inputBox">
+                                                    <input type="text" name="carOther">
+                                                </p>
+                                                
+                                            </div>
+                                        <br />
                                                 <input type="hidden" id="timeOnPage" value="timeOnLandingPage" />
                                             <span id="proceed" value="Proceed" type="submit"  class="button big scrolly" style="margin-top: 100px; font-size: 1.1em; padding: 1em 2.35em;">
                                                 Proceed
