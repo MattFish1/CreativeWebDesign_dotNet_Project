@@ -5,9 +5,10 @@
 <link rel="stylesheet" type="text/css" href="~/Style/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="~/Style/bootstrap.modaldrawer.css" />
 <link rel="stylesheet" type="text/css" media="screen and (min-width: 1200px)" href="~/Style/userMatrix.css" />
+<!---<link rel="stylesheet" type="text/css" media="screen and (min-width: 1200px)" href="~/Style/userMatrix.css" />
 <link rel="stylesheet" type="text/css" media="screen and (min-width: 992px) and (max-width: 1199px)" href="~/Style/ua-md-screen.css" />
 <link rel="stylesheet" type="text/css" media="screen and (min-width: 780px) and (max-width: 991px)" href="~/Style/ua-sm-screen.css" />
-<link rel="stylesheet" type="text/css" media="screen and (max-width: 779px)" href="~/Style/ua-xs-screen.css" />
+<link rel="stylesheet" type="text/css" media="screen and (max-width: 779px)" href="~/Style/ua-xs-screen.css" />-->
 <link rel="stylesheet" type="text/css" href="~/Style/radioButton.css" />
 
 <!--Scripts-->
@@ -58,7 +59,7 @@
                         <div class="pwTopArrow"></div>
                         <p style="color:black">Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubili,et.</p>
                     </div>
-                    <p style="margin-left: 40px;"><b>Options</b></p>
+                    <p style="margin-left: 40px; margin-top: 5px;"><b>Options</b></p>
                     <p style="margin-right: 70px;"><b>Criteria</b></p>
 
                 </th>
@@ -102,7 +103,7 @@
                     <p>Category</p>
                 </th>
 
-                <th class="tg-031e cat" data-window="category5" style="border-top: 4px solid lightgrey; border-bottom:4px solid black; border-right:4px solid black">
+                <th class="tg-031e cat" data-window="category5" style="border:5.5px solid black">
                     <div class="pw" id="category5" style="top:25px;">
                         <div class="pwTopArrowBorder"></div>
                         <div class="pwTopArrow"></div>
@@ -163,7 +164,7 @@
                     </div>
                 </td>
 
-                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                <td style="border-left: 5.5px solid #D6D6D6; border-right: 5.5px solid #D6D6D6" class="tg-s6z2">
                     <output for="fader"  ng-bind="val4" id="volume4">0</output>
                     <span ng-click="val4 = sliderMinus(val4)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val4" step="1" type="range" value="0">
@@ -225,7 +226,7 @@
                     </div>
                 </td>
 
-                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                <td style="border-left: 5.5px solid #D6D6D6; border-right: 5.5px solid #D6D6D6" class="tg-s6z2">
                     <output for="fader"  ng-bind="val8" id="volume8">0</output>
                     <span ng-click="val8 = sliderMinus(val8)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val8" step="1" type="range" value="0">
@@ -285,7 +286,7 @@
                     </div>
                 </td>
 
-                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                <td style="border-left: 5.5px solid #D6D6D6; border-right: 5.5px solid #D6D6D6" class="tg-s6z2">
                     <output for="fader"  ng-bind="val12" id="volume12">0</output>
                     <span ng-click="val12 = sliderMinus(val12)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val12" step="1" type="range" value="0">
@@ -345,7 +346,7 @@
                     </div>
                 </td>
 
-                <td style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                <td style="border-left: 5.5px solid #D6D6D6; border-right: 5.5px solid #D6D6D6" class="tg-s6z2">
                     <output for="fader"  ng-bind="val1" id="volume1">0</output>
                     <span ng-click="val1 = sliderMinus(val1)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val1" step="1" type="range" value="0">
@@ -354,8 +355,8 @@
                 </td>
             </tr>
 
-            <tr style="border: 4px solid #D6D6D6;">
-                <th class="tg-fo3p cat" data-window="choiceW">
+            <tr>
+                <th class="tg-fo3p cat" data-window="choiceW" style="border: 5.5px solid #D6D6D6;">
                     <div class="pwLeft" id="choiceW" style="">
                         <div class="pwLeftArrowBorder"></div>
                         <div class="pwLeftArrow"></div>
@@ -366,26 +367,26 @@
 
               
 
-                <td value="minivan" class="tg-031e" align="center">
+                <td value="minivan" class="tg-031e" align="center" style="border-bottom: 5.5px solid #D6D6D6;border-top: 5.5px solid #D6D6D6;">
                     <input data-value="category1" id="cat1CheckBox" data-id="catCheckBox" name="radAnswer3" type="checkbox" checked="false">
                     <label for="cat1CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
                 </td>
 
-                <td value="minivan" class="tg-031e" align="center">
+                <td value="minivan" class="tg-031e" align="center" style="border-bottom: 5.5px solid #D6D6D6;border-top: 5.5px solid #D6D6D6;">
                     <input data-value="category2" id="cat2CheckBox" data-id="cat2CheckBox" name="radAnswer3" type="checkbox" checked="false">
                     <label for="cat2CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
                 </td>
 
-                <td  class="tg-031e" align="center">
+                <td class="tg-031e" align="center" style="border-bottom: 5.5px solid #D6D6D6;border-top: 5.5px solid #D6D6D6;">
                     <input data-value="category3" id="cat3CheckBox" data-id="cat3CheckBox" name="radAnswer3" type="checkbox" checked="false">
                     <label for="cat3CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
                 </td>
 
-                <td  class="tg-031e" align="center">
+                <td class="tg-031e" align="center" style="border-bottom: 5.5px solid #D6D6D6;border-top: 5.5px solid #D6D6D6;">
                     <input data-value="category4" id="cat4CheckBox" data-id="cat4CheckBox" name="radAnswer3" type="checkbox" checked="false">
                     <label for="cat4CheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
                 </td>
-                <td style="background:#D6D6D6;"></td>
+                <td style="background:#D6D6D6; border-bottom: 5.5px solid #D6D6D6;border-top: 5.5px solid #D6D6D6;"></td>
                 
                 
 

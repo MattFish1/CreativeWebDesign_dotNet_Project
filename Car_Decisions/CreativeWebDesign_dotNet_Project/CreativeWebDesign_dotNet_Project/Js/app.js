@@ -11,11 +11,13 @@ app.controller('mainController', ['$scope', function($scope){
 	$scope.helpText ="";
 	$scope.test ="tests";
 	$scope.sliderValues = {"s1" : 0, "s2" : 0, "s3" : 0, "s4" : 0, "s5" : 0, "s6" : 0, "s7" : 0, "s8" : 0, "s9" : 0, "s10" : 0, "s11" : 0, "s12" : 0, 
-	"s_vol8" : 0, "s_14" : 0, "s_15": 0, "s_16" : 0};
+	    "s_vol8": 0, "s13": 0, "s14": 0, "s15": 0, "s16": 0, "s17": 0, "s18": 0,
+	};
 	$scope.currentSlider;
 	$scope.val8 = 0;
 	$scope.val12 = 0;
 	$scope.val4 = 0;
+	$scope.val1 = 0;
 	$scope.val16 = 0;
 	$scope.Links = [];
 	var uaObj = {

@@ -309,21 +309,21 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                 worksheet.Cell("T" + j.ToString()).Value = userRecords[i].CarOther;
                 worksheet.Cell("U" + j.ToString()).Value = userRecords[i].TimeOnMatrix;
                 worksheet.Cell("V" + j.ToString()).Value = userRecords[i].TimeOnLandingPage;
-                worksheet.Cell("W" + j.ToString()).Value = userRecords[i].FinalChoice;
+                //worksheet.Cell("W" + j.ToString()).Value = userRecords[i].FinalChoice;
                 worksheet.Cell("X" + j.ToString()).Value = userRecords[i].Test;
                 
                 try
                 {
                     if (userRecords[i].FinalChoice.Trim() == "")
                     {
-                        worksheet.Cell("T" + j.ToString()).Value = "None";
+                        worksheet.Cell("W" + j.ToString()).Value = "None";
                     }
                     else
                     {
-                        worksheet.Cell("T" + j.ToString()).Value = userRecords[i].FinalChoice;
+                        worksheet.Cell("W" + j.ToString()).Value = userRecords[i].FinalChoice;
                     }
                 }
-                catch { worksheet.Cell("T" + j.ToString()).Value = "None"; }
+                catch { worksheet.Cell("W" + j.ToString()).Value = "None"; }
                 j = j+2;
                 //Add User Activity to Excel Sheet
                 

@@ -218,6 +218,7 @@
     <Content Include="Js\jquery.min.js" />
     <Content Include="Js\jquery.scrolly.min.js" />
     <Content Include="Js\skel.min.js" />
+    <Content Include="Style\8x4matrix.css" />
     <Content Include="Style\demographics.css" />
     <Content Include="Extra\info.jpg" />
     <Content Include="Extra\main.js" />
