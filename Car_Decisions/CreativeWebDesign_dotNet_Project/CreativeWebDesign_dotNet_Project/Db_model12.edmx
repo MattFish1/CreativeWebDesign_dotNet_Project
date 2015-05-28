@@ -45,6 +45,7 @@
           <Property Name="CurrentCar" Type="nvarchar" MaxLength="500" />
           <Property Name="CarOther" Type="nvarchar" MaxLength="500" />
           <Property Name="FinalChoice" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__UserActiv__UserI__49C3F6B7">
           <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />
@@ -112,6 +113,7 @@
           <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserActivities" Relationship="Self.FK__UserActiv__UserI__36B12243" FromRole="UserRecords" ToRole="UserActivity" />
           <Property Name="CarOther" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Test" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__UserActiv__UserI__36B12243">
           <End Role="UserRecords" Type="Self.UserRecord" Multiplicity="0..1" />
@@ -155,6 +157,7 @@
           <EntitySetMapping Name="UserRecords">
             <EntityTypeMapping TypeName="CarDecision_DBModel.UserRecord">
               <MappingFragment StoreEntitySet="UserRecords">
+                <ScalarProperty Name="Test" ColumnName="Test" />
                 <ScalarProperty Name="CarOther" ColumnName="CarOther" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />

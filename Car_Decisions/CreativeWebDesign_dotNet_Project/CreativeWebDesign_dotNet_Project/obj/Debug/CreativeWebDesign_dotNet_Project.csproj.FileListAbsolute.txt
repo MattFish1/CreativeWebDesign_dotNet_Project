@@ -55,3 +55,4 @@ C:\Users\Matt\Documents\Visual Studio 2013\Projects\CarDecisonsReal\Car_Decision
 C:\Users\Matt\Documents\Visual Studio 2013\Projects\CarDecisonsReal\Car_Decisions\CreativeWebDesign_dotNet_Project\CreativeWebDesign_dotNet_Project\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Matt\Documents\Visual Studio 2013\Projects\CarDecisonsReal\Car_Decisions\CreativeWebDesign_dotNet_Project\CreativeWebDesign_dotNet_Project\obj\Debug\CreativeWebDesign_dotNet_Project.dll
 C:\Users\Matt\Documents\Visual Studio 2013\Projects\CarDecisonsReal\Car_Decisions\CreativeWebDesign_dotNet_Project\CreativeWebDesign_dotNet_Project\obj\Debug\CreativeWebDesign_dotNet_Project.pdb
+C:\Users\Matt\Documents\Visual Studio 2013\Projects\CarDecisonsReal\Car_Decisions\CreativeWebDesign_dotNet_Project\CreativeWebDesign_dotNet_Project\obj\Debug\CreativeWebDesign_dotNet_Project.csprojResolveAssemblyReference.cache

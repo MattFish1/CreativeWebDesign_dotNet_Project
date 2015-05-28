@@ -42,6 +42,7 @@
     <Property Name="FinalChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="UserActivities" Relationship="Self.FK__UserActiv__UserI__36B12243" FromRole="UserRecords" ToRole="UserActivity" />
     <Property Name="CarOther" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Test" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__UserActiv__UserI__36B12243">
     <End Role="UserRecords" Type="Self.UserRecord" Multiplicity="0..1" />

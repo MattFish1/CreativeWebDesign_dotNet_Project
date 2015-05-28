@@ -40,6 +40,7 @@
     <Property Name="CurrentCar" Type="nvarchar" MaxLength="500" />
     <Property Name="CarOther" Type="nvarchar" MaxLength="500" />
     <Property Name="FinalChoice" Type="nvarchar" MaxLength="50" />
+    <Property Name="Test" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK__UserActiv__UserI__49C3F6B7">
     <End Role="UserRecords" Type="Self.UserRecords" Multiplicity="0..1" />

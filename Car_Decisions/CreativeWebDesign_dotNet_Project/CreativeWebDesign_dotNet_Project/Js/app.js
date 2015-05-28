@@ -349,13 +349,13 @@ app.controller('mainController', ['$scope', function($scope){
 	    var uID = $("#userID").data("value");
 	    var uaString = JSON.stringify(uaObj); //.replace(/"/g, "'");
 	    $("#sendUA").hide();
-	    
+	    var matrix = $("matrix").data("matrix");
 		$.ajax({
 			crossDomain: true,
 	        headers: { 'Access-Control-Allow-Origin': '*' },
 	        type: "POST",
 	        url: action,
-	        data: { userActivity: uaString, userID: uID, timeOnSurvey: timeOnSite, finalChoice: finalChoice},
+	        data: { userActivity: uaString, userID: uID, timeOnSurvey: timeOnSite, finalChoice: finalChoice, matrix: matrix},
 	        success: function () {
 	            
 	            window.location = "http://cardecisionssite.azurewebsites.net/home/finishedsurvey";

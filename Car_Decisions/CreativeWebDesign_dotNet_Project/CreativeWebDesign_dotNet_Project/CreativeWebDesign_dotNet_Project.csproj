@@ -211,6 +211,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\blueWLine2.jpg" />
+    <Content Include="Images\blue_w_line.jpg" />
     <Content Include="Js\carVideo.js" />
     <Content Include="Js\init.js" />
     <Content Include="Js\jquery.min.js" />
@@ -278,9 +280,16 @@
       <DependentUpon>Db_model12.edmx</DependentUpon>
       <LastGenOutput>Db_model12.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\cardecisions.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionsbeta %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionsbeta %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\cardecisionsbeta.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionssite %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionssite %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\cardecisionssite %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\cardecisionssite.pubxml" />
     <None Include="Properties\PublishProfiles\CreativeWebDesigndotNetProject.pubxml" />
+    <None Include="Properties\PublishProfiles\matrixtesting.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

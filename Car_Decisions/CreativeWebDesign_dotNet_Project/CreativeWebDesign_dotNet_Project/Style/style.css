@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+﻿@charset 'UTF-8';
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700');
 @import url('font-awesome.min.css');
 
@@ -368,6 +368,7 @@
 			-o-transition: background-color .2s ease-in-out;
 			-ms-transition: background-color .2s ease-in-out;
 			transition: background-color .2s ease-in-out;
+            width: 260px;
 		}
 
 			input[type="button"]:hover,

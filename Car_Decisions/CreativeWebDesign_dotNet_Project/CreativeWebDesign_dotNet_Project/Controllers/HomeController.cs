@@ -106,10 +106,17 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
         
 
         [HttpPost]
-        public ActionResult PostUserMatrix(string userActivity, string userID, double timeOnSurvey, string finalChoice)
+        public ActionResult PostUserMatrix(string userActivity, string userID, double timeOnSurvey, string finalChoice, string matrix)
         {
             //CreativeWebDesigndotNetProject_dbEntities db = new CreativeWebDesigndotNetProject_dbEntities();
             //if (db.UserActivities.Where(x => x.UserId == userID).Count() == 0)
+           /* if(test == true)
+            {
+                UserRecord testRecord = new UserRecord();
+                testRecord.Id = "test_" + Guid.NewGuid().ToString();
+                testRecord.Age = testName;
+            }*/
+
             CarDecision_DBEntities1 db = new CarDecision_DBEntities1();
                 JObject uaObj = JObject.Parse(userActivity);
                 string[] split = timeOnSurvey.ToString().Split('.');
@@ -124,6 +131,7 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                 db.UserRecords.Find(userID).TimeOnMatrix = minutes + " min, " + seconds + "sec";
                 db.UserRecords.Find(userID).TimeLoggedOff = DateTime.Now;
                 db.UserRecords.Find(userID).FinalChoice = finalChoice;
+                db.UserRecords.Find(userID).Test = matrix;
 
                 foreach (var item in uaObj["userActivity"])
                 {
@@ -132,7 +140,7 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                         UserActivity ua = new UserActivity();
                         ua.UserId = userID;
                         ua.UserRecord = db.UserRecords.Find(userID);
-
+                        
                         ua.OrderClicked = item["orderClicked"].ToString();
                         try
                         {
@@ -276,6 +284,9 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                 worksheet.Cell("V" + j.ToString()).Style.Font.Bold = true;
                 worksheet.Cell("W" + j.ToString()).Value = "Final Choice";
                 worksheet.Cell("W" + j.ToString()).Style.Font.Bold = true;
+                worksheet.Cell("X" + j.ToString()).Value = "Matrix Used";
+                worksheet.Cell("X" + j.ToString()).Style.Font.Bold = true;
+              
                 j++;
 
                 worksheet.Cell("A" + j.ToString()).Value = userRecords[i].Id;
@@ -299,6 +310,8 @@ namespace CreativeWebDesign_dotNet_Project.Controllers
                 worksheet.Cell("U" + j.ToString()).Value = userRecords[i].TimeOnMatrix;
                 worksheet.Cell("V" + j.ToString()).Value = userRecords[i].TimeOnLandingPage;
                 worksheet.Cell("W" + j.ToString()).Value = userRecords[i].FinalChoice;
+                worksheet.Cell("X" + j.ToString()).Value = userRecords[i].Test;
+                
                 try
                 {
                     if (userRecords[i].FinalChoice.Trim() == "")

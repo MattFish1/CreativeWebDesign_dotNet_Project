@@ -17,6 +17,7 @@
     <EntitySetMapping Name="UserRecords">
       <EntityTypeMapping TypeName="CarDecision_DBModel.UserRecord">
         <MappingFragment StoreEntitySet="UserRecords">
+          <ScalarProperty Name="Test" ColumnName="Test" />
           <ScalarProperty Name="CarOther" ColumnName="CarOther" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="TimeLoggedIn" ColumnName="TimeLoggedIn" />

@@ -37,22 +37,26 @@
     <!--popup windows-->
     <!--Top-->
 
-
-
-
-
+    <style>
+        .cat {
+            height: 65px !important;
+            width: 177px;
+        }
+    </style>
+    <span id="matrix" data-matrix="Normal"></span>
 
     <table class="tg">
         <tbody class="us-help-area">
             <tr>
 
-                <th class="tg-ts7t cat" data-window="pacW" style="border-bottom:4px solid lightgray; border-top: 4px solid lightgrey; border-left: 4px solid lightgrey; border-right:4px solid lightgray;">
-                    <!--<div class="pw" id="pacW" style="top:25px; ">
+                <th class="tg-ts7t cat" style="max-width: 177px;background-image: url('../Images/blueWLine2.jpg');" data-window="pacW" style="border-bottom:4px solid lightgray; border-top: 4px solid lightgrey; border-left: 4px solid lightgrey; border-right:4px solid lightgray;">
+                    <div class="pw" id="pacW" style="top:25px; ">
                         <div class="pwTopArrowBorder">	</div>
                         <div class="pwTopArrow"></div>
                         <p style="color:black">Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubili,et.</p>
-                    </div>-->
-                    <p>Purchasing A Car</p>
+                    </div>
+                    <p style="margin-left: 40px;">Options</p>
+                    <p style="margin-right: 70px;">Critiria</p>
 
                 </th>
 
@@ -91,7 +95,7 @@
                         <div class="pwTopArrow"></div>
                         <p>Duis phasellus semper primis odio, nec lacinia blandit pellentesque, pulvinar dis mollis dis ac interdum aptent Leo Cubilia cubilia, et.</p>
                     </div>
-                    <p>Weights</p>
+                    <p><b>Weights</b></p>
                 </th>
             </tr>
 
@@ -130,8 +134,8 @@
                     </div>
                 </td>
 
-                <td class="tg-s6z2">
-                    <output for="fader"  ng-bind="val12" id="volume12">0</output>
+                <td style ="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6" class="tg-s6z2">
+                    <output for="fader" ng-bind="val12" id="volume12">0</output>
                     <span ng-click="val12 = sliderMinus(val12)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input data-id="yearlyCostWeight" id="fader" class="range" style="display:inline" max="10" min="0" ng-model="val12" step="1" type="range" value="0">
 
@@ -172,7 +176,7 @@
                     </div>
                 </td>
 
-                <td class="tg-s6z2">
+                <td class="tg-s6z2" style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6">
                     <output for="fader4" ng-bind="val4" id="volume4">0</output>
                     <span ng-click="val4 = sliderMinus(val4)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input class="range" data-id="familyDemographicWeight" style="display:inline" id="fader4" max="10" min="0" ng-model="val4" step="1" type="range" value="0">
@@ -214,7 +218,7 @@
                     </div>
                 </td>
 
-                <td class="tg-s6z2">
+                <td class="tg-s6z2" style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6">
                     <output for="fader8" ng-bind="val8" id="volume8">0</output>
                     <span ng-click="val8 = sliderMinus(val8)"><img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input class="range" data-id="styleWeight" style="display:inline" id="fader8" max="10" min="0" ng-model="val8" step="1" type="range" value="0">
@@ -257,7 +261,7 @@
                     </div>
                 </td>
 
-                <td class="tg-s6z2">
+                <td class="tg-s6z2" style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6">
                     <output for="fader16" ng-bind="val16" id="volume16">0</output>
                     <span ng-click="val16 = sliderMinus(val16)"> <img class="rangeButton" ng-src="{{minusImage}}"></span>
                     <input class="range" data-id="saftyRatingfWeight" style="display:inline" id="fader16" max="10" min="0" ng-model="val16" step="1" type="range" value="0">
@@ -291,7 +295,7 @@
                     <label for="minivanCheckBox" style="margin-left: 15px; margin-top: 30px;"></label>
                 </td>
 
-                <td class="tg-031e"></td>
+                <td class="tg-031e" style="border-left: 4px solid #D6D6D6; border-right: 4px solid #D6D6D6"></td>
 
             </tr>
         </tbody>
